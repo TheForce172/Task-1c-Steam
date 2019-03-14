@@ -11,3 +11,8 @@ Account::~Account()
 		delete users[i];
 	}
 }
+
+const List<User*> Account::getUsers() const
+{
+	return users;
+}

@@ -4,3 +4,11 @@ LoginUserMenu::LoginUserMenu(const std::string& title, Application * app) : Menu
 {
 	Paint();
 }
+
+void LoginUserMenu::OutputOptions()
+{
+	for (int i = 0; i < app->GetCurrentAccount()->users.length(); i++)
+	{
+		Option(i + 1, app->GetCurrentAccount()->users[i].GetUsername())
+	}
+}
