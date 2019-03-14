@@ -37,7 +37,8 @@ void createHardcodedTestData()
 	u3->getLibary().addAtEnd(new LibraryItem("2018-09-30", app.GetStore().getGames()[6]));
 
 	// Make an account and attach the users
-	app.addAccount(new Account("alice@shu.com", "password", "2018-06-16"));
+	Account* a = new Account("alice@shu.com", "password", "2018-06-16");
+	app.addAccount(a);
 	app.addUser("alice@shu.com", u1);
 	app.addUser("alice@shu.com", u2);
 	app.addUser("alice@shu.com", u3);
