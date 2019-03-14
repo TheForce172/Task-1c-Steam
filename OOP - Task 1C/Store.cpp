@@ -11,3 +11,8 @@ Store::~Store()
 		delete games[i];
 	}
 }
+
+List<Game*> Store::getGames() const
+{
+	return games;
+}

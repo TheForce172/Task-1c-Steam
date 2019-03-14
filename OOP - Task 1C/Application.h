@@ -21,8 +21,10 @@ class Application
 		bool LoginAccount(const std::string& email, const std::string& password);
 		bool LoginUser(const std::string& username, const std::string& password);
 		void LogoutUser();
-		List<Account*>  accounts;
+		void addAccount(Account*);
+		void addUser(const std::string&, User*);
 	private:
+		List<Account*>  accounts;
 		Store store;
 		Account* currentAccount;
 		User* currentUser;

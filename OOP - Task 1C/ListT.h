@@ -64,6 +64,7 @@ public:
 	void deleteOne(const T&);                // delete first occurrence of item
 	int length() const;                      // return length
 	bool contains(const T&) const;           // check if an item is in list
+	T operator[] (int) const;
 private:
 	Node<T>* head_;                          // point onto first item (nullptr if empty)
 	Node<T>* end() const;                    // return address of last item (nullptr if empty)
@@ -98,6 +99,15 @@ List<T>::~List()
 
 // public operations
 // -----------------
+/*template <class T>
+T List<T>::operator[] (int index) const;
+{
+	List<T> temp = *this;
+	for (int i = 0; i < index; i++) {
+		temp.deleteFirst();
+	}
+	return temp.first();
+}*/
 template <class T>
 List<T>& List<T>::operator = (const List<T>& rhs)
 {
@@ -239,6 +249,16 @@ bool List<T>::contains(const T& item) const
 	}
 
 	return false;
+}
+
+template<class T>
+inline T List<T>::operator[](int index) const
+{
+	List<T> temp = *this;
+	for (int i = 0; i < index; i++) {
+		temp.deleteFirst();
+	}
+	return temp.first();
 }
 
 // private (support) operations

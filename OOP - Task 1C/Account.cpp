@@ -16,3 +16,7 @@ const List<User*> Account::getUsers() const
 {
 	return users;
 }
+
+void Account::addUser(User* u) {
+	users.addAtEnd(u);
+}

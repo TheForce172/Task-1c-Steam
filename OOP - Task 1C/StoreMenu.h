@@ -5,6 +5,7 @@
 
 #include <string>
 #include <vector>
+#include "ListT.h"
 
 class StoreMenu : public Menu
 {
@@ -13,5 +14,5 @@ public:
 	void OutputOptions() final;
 	bool HandleChoice(char choice) final;
 private:
-	std::vector<std::string> games = { "Factorio", "The Witness", "INSIDE", "Brothers" };
+	List<Game*> games;
 };

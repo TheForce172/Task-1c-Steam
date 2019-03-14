@@ -11,3 +11,8 @@ Player::~Player()
 		delete library[i];
 	}
 }
+
+List<LibraryItem*> Player::getLibary() const
+{
+	return library;
+}

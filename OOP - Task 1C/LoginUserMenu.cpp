@@ -7,8 +7,8 @@ LoginUserMenu::LoginUserMenu(const std::string& title, Application * app) : Menu
 
 void LoginUserMenu::OutputOptions()
 {
-	for (int i = 0; i < app->GetCurrentAccount()->users.length(); i++)
+	for (int i = 0; i < app->GetCurrentAccount()->getUsers().length(); i++)
 	{
-		Option(i + 1, app->GetCurrentAccount()->users[i].GetUsername())
+		Option(i + 1, app->GetCurrentAccount()->getUsers()[i]->GetUsername());
 	}
 }
