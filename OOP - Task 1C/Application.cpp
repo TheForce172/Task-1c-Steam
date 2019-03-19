@@ -63,7 +63,7 @@ void Application::addUser(const std::string& accountname, User * u) {
 
 }
 
-void Application :: Load(){
+void Application::Load(){
 
 }
 
