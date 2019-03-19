@@ -4,7 +4,9 @@
 #include "User.h"
 #include "Store.h"
 #include "ListT.h"
-
+#include <iostream>
+#include <sstream>
+#include <fstream>
 class Application
 {
 	public:
@@ -23,7 +25,7 @@ class Application
 		void LogoutUser();
 		void addAccount(Account*);
 		void Save();
-		void Load();
+		void Load(); 
 		void addUser(const std::string&, User*);
 	private:
 		List<Account*>  accounts;
