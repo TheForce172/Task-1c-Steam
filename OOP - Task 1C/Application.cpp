@@ -59,20 +59,32 @@ void Application::addAccount(Account* a) {
 	accounts.addAtEnd(a);
 }
 
-void Application::Load(){
+void Application::Load() {
 
 	std::ifstream Load;
 	Load.open("Game.txt", std::ios::in);
-	if (Load.fail()) std::cout << "\nError loading game.";
+	if (Load.fail()) std::cout << "\n Error Loading .";
 	else {
+		std::string line;
+		Load >> line;
+		if (line == "GAME") {
+			std::string name;
+			std::string description;
+			int cost;
+			int ageRating;
+			int ID;
+			Load >> ID;
+			Load >> name;
+			Load >> description;
+			Load >> cost;
+			Load >> ageRating;
+			store.addGame (new Game(name, description, cost, ageRating));
 
-		store.addGame;
-		
+
+		}
+
 	}
-	
-	
 }
-
-void Application::Save() {
+void Application::Save(){
 
 }
