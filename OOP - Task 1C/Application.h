@@ -22,11 +22,13 @@ class Application
 		bool LoginUser(const std::string& username, const std::string& password);
 		void LogoutUser();
 		void addAccount(Account*);
-		
+		void Save();
+		void Load();
 		void addUser(const std::string&, User*);
 	private:
 		List<Account*>  accounts;
 		Store store;
 		Account* currentAccount;
 		User* currentUser;
+		
 };

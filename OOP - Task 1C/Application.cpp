@@ -62,3 +62,11 @@ void Application::addUser(const std::string& accountname, User* u) {
 	currentAccount->addUser(u);
 
 }
+
+void Application :: Load(){
+
+}
+
+void Application::Save() {
+
+}
