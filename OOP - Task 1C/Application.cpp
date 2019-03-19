@@ -67,21 +67,20 @@ void Application::Load() {
 	if (Load.fail()) std::cout << "\n Error Loading .";
 	else {
 		std::string line;
-		Load >> line;
-		if (line == "GAME") {
-			std::string name;
-			std::string description;
-			int cost;
-			int ageRating;
-			int ID;
-			Load >> ID;
-			Load >> name;
-			Load >> description;
-			Load >> cost;
-			Load >> ageRating;
-			store.addGame (new Game(name, description, cost, ageRating));
-
-
+		while (Load >> line) {
+			if (line == "GAME") {
+				std::string name;
+				std::string description;
+				int cost;
+				int ageRating;
+				int ID;
+				Load >> ID;
+				Load >> name;
+				Load >> description;
+				Load >> cost;
+				Load >> ageRating;
+				store.addGame(new Game(name, description, cost, ageRating));
+			}
 		}
 
 	}
