@@ -103,6 +103,7 @@ void Application::Load() {
 					Load >> password;
 					Load >> credit;
 					currentUser = new User(username, password, created, credit);
+					currentload->addUser(currentUser);
 			}
 		}
 
