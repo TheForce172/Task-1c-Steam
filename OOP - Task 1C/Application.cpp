@@ -82,7 +82,7 @@ void Application::Load() {
 				Load >> ageRating;
 				store.addGame(new Game(name, description, cost, ageRating));
 			}
-			else if(line== "ACCOUNT") {
+			else if(line == "ACCOUNT") {
 					std::string email;
 					std::string password;
 					std::string created;
