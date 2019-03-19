@@ -1,5 +1,6 @@
 #include "Application.h"
 
+
 Application::Application() : currentAccount(nullptr), currentUser(nullptr)
 {
 }
@@ -60,6 +61,16 @@ void Application::addAccount(Account* a) {
 
 void Application::Load(){
 
+	ifstream Load;
+	Load.open("Game.txt", ios::in);
+	if (fin.fail()) cout << "\nError loading game.";
+	else {
+
+		store.addGame;
+		
+	}
+	
+	
 }
 
 void Application::Save() {
