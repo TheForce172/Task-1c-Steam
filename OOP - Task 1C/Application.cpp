@@ -68,6 +68,7 @@ void Application::Load() {
 	else {
 		std::string line;
 		Account* currentload;
+		User* currentUser;
 		while (Load >> line) {
 			if (line == "GAME") {
 				std::string name;
@@ -93,7 +94,15 @@ void Application::Load() {
 					addAccount(currentload);			
 			}
 			else if (line == "ACCOUNT-USER") {
-
+					std::string username;
+					std::string password;
+					std::string created;
+					int credit;
+					Load >> created;
+					Load >> username;
+					Load >> password;
+					Load >> credit;
+					currentUser = new User(username, password, created, credit);
 			}
 		}
 
