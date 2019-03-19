@@ -61,6 +61,7 @@ void Application::addAccount(Account* a) {
 
 void Application::Load() {
 
+
 	std::ifstream Load;
 	Load.open("Game.txt", std::ios::in);
 	if (Load.fail()) std::cout << "\n Error Loading .";
