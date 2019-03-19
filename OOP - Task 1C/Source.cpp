@@ -39,9 +39,9 @@ void createHardcodedTestData()
 	// Make an account and attach the users
 	Account* a = new Account("alice@shu.com", "password", "2018-06-16");
 	app.addAccount(a);
-	app.addUser("alice@shu.com", u1);
-	app.addUser("alice@shu.com", u2);
-	app.addUser("alice@shu.com", u3);
+	a->addUser(u1);
+	a->addUser(u2);
+	a->addUser(u3);
 
 	// TODO: We need a login menu for accounts, for now we log in the only account
 	app.LoginAccount("alice@shu.ac.uk", "password");

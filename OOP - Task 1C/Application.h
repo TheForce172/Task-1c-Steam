@@ -24,7 +24,6 @@ class Application
 		void addAccount(Account*);
 		void Save();
 		void Load();
-		void addUser(const std::string&, User*);
 	private:
 		List<Account*>  accounts;
 		Store store;
