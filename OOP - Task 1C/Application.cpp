@@ -63,3 +63,11 @@ void Application::addUser(const std::string& accountname, User * u) {
 	a->addUser(u);
 
 }
+
+void Application :: Load(){
+
+}
+
+void Application::Save() {
+
+}
