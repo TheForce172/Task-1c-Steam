@@ -58,7 +58,7 @@ void Application::addAccount(Account* a) {
 	accounts.addAtEnd(a);
 }
 
-void Application::addUser(const std::string& accountname, User * u) {
+void Application::addUser(const std::string& accountname, User* u) {
 	currentAccount->addUser(u);
 
 }
