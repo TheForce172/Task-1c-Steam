@@ -59,8 +59,7 @@ void Application::addAccount(Account* a) {
 }
 
 void Application::addUser(const std::string& accountname, User * u) {
-	Account* a = accounts.find(accountname);
-	a->addUser(u);
+	currentAccount->addUser(u);
 
 }
 
