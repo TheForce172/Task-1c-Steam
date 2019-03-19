@@ -13,15 +13,15 @@ Application app;
 void createHardcodedTestData()
 {
 	// Setup store with some games
-	app.GetStore().getGames().addAtEnd(new Game("The Witness", "Explore a nice island and solve puzzles.", 2999, 5));
-	app.GetStore().getGames().addAtEnd(new Game("Braid", "A time twisting puzzle game.", 499, 15));
-	app.GetStore().getGames().addAtEnd(new Game("Factorio", "Build a complicated factory in space.", 1599, 12));
-	app.GetStore().getGames().addAtEnd(new Game("LIMBO", "Watch out for that spider.", 299, 12));
-	app.GetStore().getGames().addAtEnd(new Game("INSIDE", "What are those scientists even doing?!", 1299, 15));
-	app.GetStore().getGames().addAtEnd(new Game("Portal 2", "Play around with physics. Shoot the moon.", 1999, 15));
-	app.GetStore().getGames().addAtEnd(new Game("Half Life 3", "It's never coming out.", 5999, 18));
-	app.GetStore().getGames().addAtEnd(new Game("Castle Crashers", "A small giraffe follows you around.", 999, 18));
-	app.GetStore().getGames().addAtEnd(new Game("Brothers", "Split your brain into two thumbs.", 799, 15));
+	app.GetStore().addGame(new Game("The Witness", "Explore a nice island and solve puzzles.", 2999, 5));
+	app.GetStore().addGame(new Game("Braid", "A time twisting puzzle game.", 499, 15));
+	app.GetStore().addGame(new Game("Factorio", "Build a complicated factory in space.", 1599, 12));
+	app.GetStore().addGame(new Game("LIMBO", "Watch out for that spider.", 299, 12));
+	app.GetStore().addGame(new Game("INSIDE", "What are those scientists even doing?!", 1299, 15));
+	app.GetStore().addGame(new Game("Portal 2", "Play around with physics. Shoot the moon.", 1999, 15));
+	app.GetStore().addGame(new Game("Half Life 3", "It's never coming out.", 5999, 18));
+	app.GetStore().addGame(new Game("Castle Crashers", "A small giraffe follows you around.", 999, 18));
+	app.GetStore().addGame(new Game("Brothers", "Split your brain into two thumbs.", 799, 15));
 
 	// Create some users
 	Player* u1 = new Admin("Alice", "password", "2018-06-16");

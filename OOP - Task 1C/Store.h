@@ -9,6 +9,7 @@ class Store
 		Store();
 		~Store();
 		List<Game*> getGames() const;
+		void addGame(Game*);
 	private:
 		List<Game*> games; // TODO: should be a dynamic collection
 };
