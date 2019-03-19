@@ -67,6 +67,7 @@ void Application::Load() {
 	if (Load.fail()) std::cout << "\n Error Loading .";
 	else {
 		std::string line;
+		Account* currentload;
 		while (Load >> line) {
 			if (line == "GAME") {
 				std::string name;
@@ -88,10 +89,11 @@ void Application::Load() {
 					Load >> created; 
 					Load >> email;
 					Load >> password;
-					Account* ci = new Account(email, password, created);
-					addAccount(ci);
-					
-			
+					currentload = new Account(email, password, created);
+					addAccount(currentload);			
+			}
+			else if (line == "ACCOUNT-USER") {
+
 			}
 		}
 
