@@ -67,8 +67,8 @@ void Application::Load() {
 	if (Load.fail()) std::cout << "\n Error Loading .";
 	else {
 		std::string line;
-		Account* currentload;
-		User* currentUser;
+		Account* currentload = nullptr;
+		User* currentUser = nullptr;
 		while (Load >> line) {
 			if (line == "GAME") {
 				std::string name;

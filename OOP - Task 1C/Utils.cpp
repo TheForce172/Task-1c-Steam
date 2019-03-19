@@ -13,8 +13,9 @@ char Utils::getCharFromUser()
 }
 
 std::string Utils::toUpperA(std::string A){
-	for (int i; i == A.length(); i++) {
-		std::string big;
-		big + std::toupper(A.at(i));
+	std::string big;
+	for (int i = 0; i == A.length(); i++) {
+		big + (char)std::toupper(A.at(i));
 	}
+	return big;
 }
