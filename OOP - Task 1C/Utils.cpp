@@ -13,9 +13,9 @@ char Utils::getCharFromUser()
 }
 
 std::string Utils::toUpperA(std::string A){
-	std::string big;
-	for (int i = 0; i == A.length(); i++) {
-		big + (char)std::toupper(A.at(i));
+	std::string big = A;
+	for (int i = 0; i < A.length(); i++) {
+		big[i] = (char)std::toupper(A.at(i));
 	}
 	return big;
 }
@@ -23,5 +23,5 @@ std::string Utils::toUpperA(std::string A){
 std::string Utils::toUpperB(std::string A) {
 
 	// for the recurrcive way
-
+	return NULL;
 }
