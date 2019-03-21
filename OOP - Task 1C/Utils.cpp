@@ -19,3 +19,9 @@ std::string Utils::toUpperA(std::string A){
 	}
 	return big;
 }
+
+std::string Utils::toUpperB(std::string A) {
+
+	// for the recurrcive way
+
+}
