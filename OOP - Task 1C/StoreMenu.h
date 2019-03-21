@@ -2,7 +2,7 @@
 
 #include "Menu.h"
 #include "Store.h"
-
+#include"GameMenu.h"
 #include <string>
 #include <vector>
 #include "ListT.h"
