@@ -44,10 +44,13 @@ bool Application::LoginAccount(const std::string& email, const std::string& pass
 
 bool Application::LoginUser(const std::string& username, const std::string& password)
 {
-	// TODO: This currently always logs you in as the first user
-	currentUser = currentAccount->getUsers()[0];
-
-	return true;
+	for (int i = 0; i < currentAccount->getUsers().length(); i++) {
+		if (username == currentAccount->getUsers()[i]->GetUsername() && password == currentAccount->getUsers()[i]->GetPassword()) {
+			currentUser = currentAccount->getUsers()[i];
+			return true;
+		}
+	}
+	return false;
 }
 
 void Application::LogoutUser()

@@ -19,6 +19,23 @@ bool LoginUserMenu::HandleChoice(char choice)
 	// this puts '1' as 0, '2' as 1, '3' as 2, '4' as 3, etc.
 	// this reverses the + 1 above and lets us do the range check below
 	int index = choice - '1';
+	bool login(false);
+	do {
+		if (index >= 0 && index < app->GetCurrentAccount()->getUsers().length()) // TODO: Hardcoded, change when using List<T>
+		{
+			std::string username = app->GetCurrentAccount()->getUsers()[index]->GetUsername();
+			//std::cout << "  Enter password for " << username << ": ";
+			if (app->LoginUser(username, Question("Enter password for " + username + ": ")))
+			{
+				login = true;
+			}
+			else {
 
-	return false;
+				Line("Incorrect Password");
+				return false;
+			}
+		}
+	} while (!login);
+
+	return true;
 }

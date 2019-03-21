@@ -8,6 +8,8 @@ class User
 		User(const std::string&, const std::string&, const std::string&, const int&);
 		virtual ~User();
 		const std::string& GetUsername() const;
+		const std::string& GetPassword() const;
+
 	private:
 		std::string username;
 		std::string password;
