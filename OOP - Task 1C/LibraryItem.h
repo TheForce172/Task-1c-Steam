@@ -8,6 +8,9 @@ class LibraryItem
 		LibraryItem(const std::string&, Game*);
 		LibraryItem(const std::string&, Game*, int);
 		~LibraryItem();
+		const Game *getGame();
+		std::string getCreated();
+		int getTime();
 	private:
 		const Game *game;
 		const std::string purchased;  // TODO: replace with custom Date class, currently YYYY-MM-DD

@@ -95,37 +95,37 @@ void Application::Load() {
 				Load >> ageRating;
 				store.addGame(new Game(name, description, cost, ageRating));
 			}
-			else if(line == "ACCOUNT") {
-					std::string email;
-					std::string password;
-					std::string created;
-					Load >> created; 
-					Load >> email;
-					Load >> password;
-					currentload = new Account(email, password, created);
-					addAccount(currentload);
-					hasAdmin = false;
-					currentUser = nullptr;
+			else if (line == "ACCOUNT") {
+				std::string email;
+				std::string password;
+				std::string created;
+				Load >> created;
+				Load >> email;
+				Load >> password;
+				currentload = new Account(email, password, created);
+				addAccount(currentload);
+				hasAdmin = false;
+				currentUser = nullptr;
 			}
 			else if (line == "ACCOUNT-USER") {
-					std::string username;
-					std::string password;
-					std::string created;
-					int credit;
-					Load >> created;
-					Load >> username;
-					Load >> password;
-					Load >> credit;
-					if (hasAdmin = false) {
-					
-					currentUser = new Admin (username, password, created, credit);
+				std::string username;
+				std::string password;
+				std::string created;
+				int credit;
+				Load >> created;
+				Load >> username;
+				Load >> password;
+				Load >> credit;
+				if (hasAdmin = false) {
 
-					}
-					else {
+					currentUser = new Admin(username, password, created, credit);
+
+				}
+				else {
 					currentUser = new Player(username, password, created, credit);
-					}
-					
-					currentload->addUser(currentUser);
+				}
+
+				currentload->addUser(currentUser);
 			}
 			else if (line == "ACCOUNT-USER-GAME") {
 				int gameID;
@@ -134,23 +134,23 @@ void Application::Load() {
 				Load >> gameID;
 				Load >> date;
 				Load >> time;
-				currentUser->getLibary().addAtEnd(new LibraryItem(date, store.getGames() [gameID],time));
+				currentUser->getLibary().addAtEnd(new LibraryItem(date, store.getGames()[gameID], time));
 
 			}
 		}
 
 	}
 }
-void Application::Save(){
+void Application::Save() {
 
 	std::ofstream Save;
 	Save.open("Game.txt", std::ios::out);
-	if (Save.fail())std:: cout << "\n Error saving.";
+	if (Save.fail())std::cout << "\n Error saving.";
 	else {
 		for (int i = 0; i < store.getGames().length; i++) {
 			Save << "GAME";
 			Save << i;
-			Save << store.getGames() [i]->GetName();
+			Save << store.getGames()[i]->GetName();
 			Save << store.getGames()[i]->GetDescription();
 			Save << store.getGames()[i]->GetCost();
 			Save << store.getGames()[i]->GetageRating();
@@ -168,23 +168,20 @@ void Application::Save(){
 				Save << accounts[i]->getUsers()[j]->GetCredits();
 				Player* user = dynamic_cast<Player *>(accounts[i]->getUsers()[j]);
 				for (int k = 0; k < user->getLibary().length(); k++) {
-					Save << "ACCOUNT-USER- GAME";
-					Save << 
-
+					Save << "ACCOUNT-USER-GAME";
+					List<Game*> temp = store.getGames();
+					for (int l = 0; l < temp.length(); l++) {
+						if (temp[i]->GetName() == user->getLibary()[k]->getGame()->GetName()) {
+							Save << l;
+						}
+					}
+					Save << user->getLibary()[k]->getCreated();
+					Save << user->getLibary()[k]->getTime();
 				}
-
-
-
 			}
-
-
-		
 		}
-	
-	
-	
 	}
-	
+
 	Save.close();
 
 }
