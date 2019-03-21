@@ -72,6 +72,7 @@ void Application::Load() {
 		std::string line;
 		Account* currentload = nullptr;
 		User* currentUser = nullptr;
+		bool hasAdmin;
 		while (Load >> line) {
 			if (line == "GAME") {
 				std::string name;
@@ -94,7 +95,9 @@ void Application::Load() {
 					Load >> email;
 					Load >> password;
 					currentload = new Account(email, password, created);
-					addAccount(currentload);			
+					addAccount(currentload);
+					hasAdmin = false;
+					currentUser = nullptr;
 			}
 			else if (line == "ACCOUNT-USER") {
 					std::string username;
@@ -105,7 +108,16 @@ void Application::Load() {
 					Load >> username;
 					Load >> password;
 					Load >> credit;
-					currentUser = new User(username, password, created, credit);
+					if (hasAdmin = false) {
+					
+					currentUser = new Admin (username, password, created, credit);
+
+					}
+					else {
+					currentUser = new Player(username, password, created, credit);
+					}
+					
+
 					currentload->addUser(currentUser);
 			}
 		}

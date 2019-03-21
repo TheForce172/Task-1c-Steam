@@ -7,6 +7,9 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include "Admin.h"
+#include "Player.h"
+
 class Application
 {
 	public:
