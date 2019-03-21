@@ -16,3 +16,6 @@ const std::string& User::GetUsername() const
 const std::string& User::GetPassword() const {
 	return password;
 }
+const int User:: GetCredits() const {
+	return credits;
+}
