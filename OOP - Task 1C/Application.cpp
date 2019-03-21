@@ -147,7 +147,7 @@ void Application::Save() {
 	Save.open("Game.txt", std::ios::out);
 	if (Save.fail())std::cout << "\n Error saving.";
 	else {
-		for (int i = 0; i < store.getGames().length; i++) {
+		for (int i = 0; i < store.getGames().length(); i++) {
 			Save << "GAME";
 			Save << i;
 			Save << store.getGames()[i]->GetName();
@@ -155,7 +155,7 @@ void Application::Save() {
 			Save << store.getGames()[i]->GetCost();
 			Save << store.getGames()[i]->GetageRating();
 
-		}for (int i = 0; i < accounts.length; i++) {
+		}for (int i = 0; i < accounts.length(); i++) {
 			Save << "ACCOUNT";
 			Save << accounts[i]->getCreated();
 			Save << accounts[i]->getEmail();
