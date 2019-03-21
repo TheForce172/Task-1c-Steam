@@ -20,3 +20,11 @@ const List<User*> Account::getUsers() const
 void Account::addUser(User* u) {
 	users.addAtEnd(u);
 }
+
+std::string Account::getEmail() {
+	return email;
+}
+
+std::string Account::getPassword() {
+	return password;
+}
