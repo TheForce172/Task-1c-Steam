@@ -13,6 +13,7 @@ class Account
 		void addUser(User*);
 		std::string getEmail();
 		std::string getPassword();
+		std::string getCreated();
 	private:
 		List<User*> users;
 		std::string email;

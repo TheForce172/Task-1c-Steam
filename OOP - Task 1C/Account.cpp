@@ -28,3 +28,6 @@ std::string Account::getEmail() {
 std::string Account::getPassword() {
 	return password;
 }
+std::string Account::getCreated() {
+	return Created;
+}

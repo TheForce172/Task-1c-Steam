@@ -9,7 +9,7 @@ class User
 		virtual ~User();
 		const std::string& GetUsername() const;
 		const std::string& GetPassword() const;
-
+		const  int GetCredits() const;
 	private:
 		std::string username;
 		std::string password;
