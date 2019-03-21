@@ -75,7 +75,7 @@ void Application::Load() {
 
 	std::ifstream Load;
 	Load.open("Game.txt", std::ios::in);
-	if (Load.fail()) std::cout << "\n Error Loading .";
+	if (Load.fail()) std::cout << "\n Error Loading.";
 	else {
 		std::string line;
 		Account* currentload = nullptr;
@@ -121,5 +121,17 @@ void Application::Load() {
 	}
 }
 void Application::Save(){
+
+	std::ofstream Save;
+	Save.open("Game.txt", std::ios::in);
+	if (Save.fail())std:: cout << "\n Error saving.";
+	else {
+	
+	
+	
+	
+	}
+	
+	Save.close();
 
 }
