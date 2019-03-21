@@ -167,9 +167,11 @@ void Application::Save(){
 				Save << accounts[i]->getUsers()[j]->GetPassword();
 				Save << accounts[i]->getUsers()[j]->GetCredits();
 				Player* user = dynamic_cast<Player *>(accounts[i]->getUsers()[j]);
-				for (int k = 0; k < user->getLibary().length(); k++);
+				for (int k = 0; k < user->getLibary().length(); k++) {
+					Save << "ACCOUNT-USER- GAME";
+					Save << 
 
-
+				}
 
 
 
