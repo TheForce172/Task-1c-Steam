@@ -2,6 +2,11 @@
 
 LibraryItem::LibraryItem(const std::string& date, Game* game) : purchased(date), game(game)
 {
+	playTime = 0;
+}
+
+LibraryItem::LibraryItem(const std::string& date, Game* game, int playTime) : purchased(date), game(game), playTime(playTime)
+{
 }
 
 LibraryItem::~LibraryItem()
