@@ -11,6 +11,8 @@ class Account
 		~Account();
 		const List<User*> getUsers() const;
 		void addUser(User*);
+		std::string getEmail();
+		std::string getPassword();
 	private:
 		List<User*> users;
 		std::string email;

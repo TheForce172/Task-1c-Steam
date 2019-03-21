@@ -27,6 +27,7 @@ class Application
 		bool LoginUser(const std::string& username, const std::string& password);
 		void LogoutUser();
 		void addAccount(Account*);
+		List<Account*> getAccounts();
 		void Save();
 		void Load(); 
 	private:
