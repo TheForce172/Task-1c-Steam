@@ -1,43 +1,65 @@
-#include "Date.h"
+#include "Date.h"  
 
-Date::Date()
-{
-
+Date::Date() {		
+	setCurrentDate();
 }
 
-Date::Date(int Month, int Day, int Year)
-{
-	month = Month;
-	day = Day;
-	year = Year;
+Date::Date(int d, int m, int y) 	
+	: day_(d), month_(m), year_(y)
+{}
+
+int Date::getDay() const {
+	return day_;
 }
 
-void Date::setDay(int Day)
-{
-
-}
-void Date::setMonth(int Month)
-{
-
+int Date::getMonth() const {
+	return month_;
 }
 
-void Date::setYear(int Year)
-{
-
+int Date::getYear() const {
+	return year_;
 }
 
-
-int Date::getDay() const
-{
-	return 0;
+void Date::setDate(int d, int m, int y) {
+	day_ = d;
+	month_ = m;
+	year_ = y;
+}
+void Date::setCurrentDate() {  	
+	time_t now(time(0));
+	struct tm t;
+	localtime_s(&t, &now);
+	day_ = t.tm_mday;
+	month_ = t.tm_mon + 1;
+	year_ = t.tm_year + 1900;
 }
 
-int Date::getMonth() const
-{
-	return 0;
+bool Date::operator==(const Date& d) const { 
+	return
+		(day_ == d.day_) &&
+		(month_ == d.month_) &&
+		(year_ == d.year_);
 }
 
-int Date::getYear() const
-{
-	return 0;
+ostream& Date::putDataInStream(ostream& os) const {
+	os << setfill('0');
+	os << setw(2) << day_ << "/";
+	os << setw(2) << month_ << "/";
+	os << setw(4) << year_;
+	os << setfill(' ');
+	return os;
+}
+
+istream& Date::getDataFromStream(istream& is) {
+	char ch;			
+	is >> day_ >> ch >> month_ >> ch >> year_;
+	return is;
+}
+
+ostream& operator<<(ostream& os, const Date& aDate) {
+	return aDate.putDataInStream(os);
+}
+
+istream& operator>>(istream& is, Date& aDate) {
+	return aDate.getDataFromStream(is);
 }
