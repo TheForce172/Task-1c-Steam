@@ -116,9 +116,10 @@ void Application::Load() {
 				getline(Load, username);
 				getline(Load, password);
 				getline(Load, credit);
-				if (hasAdmin = false) {
+				if (hasAdmin == false) {
 
 					currentUser = new Admin(username, password, created, stoi(credit));
+					hasAdmin = true;
 
 				}
 				else {
@@ -128,13 +129,13 @@ void Application::Load() {
 				currentload->addUser(currentUser);
 			}
 			else if (line == "ACCOUNT-USER-GAME") {
-				int gameID;
+				std::string gameID;
 				std::string date;
-				int time;
-				iss >> gameID;
-				iss >> date;
-				iss >> time;
-				currentUser->getLibary().addAtEnd(new LibraryItem(date, store.getGames()[gameID], time));
+				std::string time;
+				getline(Load, gameID);
+				getline(Load, date);
+				getline(Load, time);
+				currentUser->addToLibrary(new LibraryItem(date, store.getGames()[stoi(gameID)], stoi(time)));
 
 			}
 		}
@@ -167,12 +168,13 @@ void Application::Save() {
 				Save << accounts[i]->getUsers()[j]->GetUsername() << "\n";
 				Save << accounts[i]->getUsers()[j]->GetPassword() << "\n";
 				Save << accounts[i]->getUsers()[j]->GetCredits() << "\n";
-				Player* user = dynamic_cast<Player *>(accounts[i]->getUsers()[j]);
+				Player* user = dynamic_cast<Player*>(accounts[i]->getUsers()[j]);
+				if (user)
 				for (int k = 0; k < user->getLibary().length(); k++) {
 					Save << "ACCOUNT-USER-GAME" << "\n";
 					List<Game*> temp = store.getGames();
 					for (int l = 0; l < temp.length(); l++) {
-						if (temp[i]->GetName() == user->getLibary()[k]->getGame()->GetName()) {
+						if (temp[l]->GetName() == user->getLibary()[k]->getGame()->GetName()) {
 							Save << l << "\n";
 						}
 					}

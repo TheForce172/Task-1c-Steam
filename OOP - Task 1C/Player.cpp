@@ -16,3 +16,7 @@ List<LibraryItem*> Player::getLibary() const
 {
 	return library;
 }
+
+void Player::addToLibrary(LibraryItem* l) {
+	library.addAtEnd(l);
+}

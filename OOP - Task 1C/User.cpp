@@ -18,4 +18,9 @@ const std::string& User::GetPassword() const {
 }
 const int User:: GetCredits() const {
 	return credits;
+
+}
+
+List<LibraryItem*> User::getLibary() const{
+	return NULL;
 }

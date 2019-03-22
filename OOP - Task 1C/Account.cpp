@@ -12,7 +12,7 @@ Account::~Account()
 	}
 }
 
-const List<User*> Account::getUsers() const
+List<User*> Account::getUsers() const
 {
 	return users;
 }
