@@ -173,9 +173,9 @@ void gameMenu(Game* game)
 void main()
 {
 	// TODO: Remove call to dummy data, instead use Load and Save
-	createHardcodedTestData();
+	//createHardcodedTestData();
 
-	// TODO: app.Load();
+	app.Load();
 	MainMenu("MAIN MENU", &app);
-	// TODO: app.Save();
+	app.Save();
 }

@@ -74,34 +74,34 @@ void Application::Load() {
 
 
 	std::ifstream Load;
-	Load.open("Game.txt", std::ios::in);
+	Load.open("data.txt", std::ios::in);
 	if (Load.fail()) std::cout << "\n Error Loading.";
 	else {
-		std::string line;
 		Account* currentload = nullptr;
 		Player* currentUser = nullptr;
 		bool hasAdmin;
-		while (Load >> line) {
+		for (std::string line; getline(Load, line); ){
+			std::istringstream iss(line);
 			if (line == "GAME") {
 				std::string name;
 				std::string description;
-				int cost;
-				int ageRating;
-				int ID;
-				Load >> ID;
-				Load >> name;
-				Load >> description;
-				Load >> cost;
-				Load >> ageRating;
-				store.addGame(new Game(name, description, cost, ageRating));
+				std::string cost;
+				std::string ageRating;
+				std::string ID;
+				getline(Load, ID);
+				getline(Load, name);
+				getline(Load, description);
+				getline(Load, cost);
+				getline(Load, ageRating);
+				store.addGame(new Game(name, description, stoi(cost), stoi(ageRating)));
 			}
 			else if (line == "ACCOUNT") {
 				std::string email;
 				std::string password;
 				std::string created;
-				Load >> created;
-				Load >> email;
-				Load >> password;
+				getline(Load, created);
+				getline(Load, email);
+				getline(Load, password);
 				currentload = new Account(email, password, created);
 				addAccount(currentload);
 				hasAdmin = false;
@@ -111,18 +111,18 @@ void Application::Load() {
 				std::string username;
 				std::string password;
 				std::string created;
-				int credit;
-				Load >> created;
-				Load >> username;
-				Load >> password;
-				Load >> credit;
+				std::string credit;
+				getline(Load, created);
+				getline(Load, username);
+				getline(Load, password);
+				getline(Load, credit);
 				if (hasAdmin = false) {
 
-					currentUser = new Admin(username, password, created, credit);
+					currentUser = new Admin(username, password, created, stoi(credit));
 
 				}
 				else {
-					currentUser = new Player(username, password, created, credit);
+					currentUser = new Player(username, password, created, stoi(credit));
 				}
 
 				currentload->addUser(currentUser);
@@ -131,9 +131,9 @@ void Application::Load() {
 				int gameID;
 				std::string date;
 				int time;
-				Load >> gameID;
-				Load >> date;
-				Load >> time;
+				iss >> gameID;
+				iss >> date;
+				iss >> time;
 				currentUser->getLibary().addAtEnd(new LibraryItem(date, store.getGames()[gameID], time));
 
 			}
@@ -144,39 +144,40 @@ void Application::Load() {
 void Application::Save() {
 
 	std::ofstream Save;
-	Save.open("Game.txt", std::ios::out);
+	Save.open("data.txt", std::ios::out);
 	if (Save.fail())std::cout << "\n Error saving.";
 	else {
 		for (int i = 0; i < store.getGames().length(); i++) {
-			Save << "GAME";
-			Save << i;
-			Save << store.getGames()[i]->GetName();
-			Save << store.getGames()[i]->GetDescription();
-			Save << store.getGames()[i]->GetCost();
-			Save << store.getGames()[i]->GetageRating();
+			Save << "GAME" << "\n";
+			Save << i << "\n";
+			Save << store.getGames()[i]->GetName() << "\n";
+			Save << store.getGames()[i]->GetDescription() << "\n";
+			Save << store.getGames()[i]->GetCost() << "\n";
+			Save << store.getGames()[i]->GetageRating() << "\n";
 
-		}for (int i = 0; i < accounts.length(); i++) {
-			Save << "ACCOUNT";
-			Save << accounts[i]->getCreated();
-			Save << accounts[i]->getEmail();
-			Save << accounts[i]->getPassword();
+		}
+		for (int i = 0; i < accounts.length(); i++) {
+			Save << "ACCOUNT" << "\n";
+			Save << accounts[i]->getCreated() << "\n";
+			Save << accounts[i]->getEmail() << "\n";
+			Save << accounts[i]->getPassword() << "\n";
 
 			for (int j = 0; j < accounts[i]->getUsers().length(); j++) {
-				Save << "ACCOUNT-USER";
-				Save << accounts[i]->getUsers()[j]->GetUsername();
-				Save << accounts[i]->getUsers()[j]->GetPassword();
-				Save << accounts[i]->getUsers()[j]->GetCredits();
+				Save << "ACCOUNT-USER" << "\n";
+				Save << accounts[i]->getUsers()[j]->GetUsername() << "\n";
+				Save << accounts[i]->getUsers()[j]->GetPassword() << "\n";
+				Save << accounts[i]->getUsers()[j]->GetCredits() << "\n";
 				Player* user = dynamic_cast<Player *>(accounts[i]->getUsers()[j]);
 				for (int k = 0; k < user->getLibary().length(); k++) {
-					Save << "ACCOUNT-USER-GAME";
+					Save << "ACCOUNT-USER-GAME" << "\n";
 					List<Game*> temp = store.getGames();
 					for (int l = 0; l < temp.length(); l++) {
 						if (temp[i]->GetName() == user->getLibary()[k]->getGame()->GetName()) {
-							Save << l;
+							Save << l << "\n";
 						}
 					}
-					Save << user->getLibary()[k]->getCreated();
-					Save << user->getLibary()[k]->getTime();
+					Save << user->getLibary()[k]->getCreated() << "\n";
+					Save << user->getLibary()[k]->getTime()<< "\n";
 				}
 			}
 		}
