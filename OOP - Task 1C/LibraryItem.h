@@ -8,7 +8,7 @@ class LibraryItem
 		LibraryItem(const std::string&, Game*);
 		LibraryItem(const std::string&, Game*, int);
 		~LibraryItem();
-		const Game *getGame();
+		Game *getGame();
 		std::string getCreated();
 		int getTime();
 	private:
