@@ -1,6 +1,6 @@
 #include "Account.h"
 
-Account::Account(const std::string& email, const std::string& password, const std::string& created) : email(email), password(password), created(created)
+Account::Account(const std::string& email, const std::string& password, const Date& created) : email(email), password(password), created_(created)
 {
 }
 
@@ -28,6 +28,6 @@ std::string Account::getEmail() {
 std::string Account::getPassword() {
 	return password;
 }
-std::string Account::getCreated() {
-	return created;
+const Date& Account::getCreated() const {
+	return created_;
 }
