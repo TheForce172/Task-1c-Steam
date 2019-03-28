@@ -102,7 +102,8 @@ void Application::Load() {
 				getline(Load, created);
 				getline(Load, email);
 				getline(Load, password);
-				currentload = new Account(email, password, created);
+				Date date = created;
+				currentload = new Account(email, password, date);
 				addAccount(currentload);
 				hasAdmin = false;
 				currentUser = nullptr;
