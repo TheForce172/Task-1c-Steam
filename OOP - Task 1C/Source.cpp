@@ -88,7 +88,7 @@ char showStoreMenuAndGetUserChoice()
 		std::cout << "  " << (i + 1) << ") " << app.GetStore().getGames()[i]->GetName() << "\n";
 	}
 
-	// TODO: Implement search store option
+	// Search store option
 	std::cout << "                    \n";
 	std::cout << "  PAGE " " Of " "   \n";
 	std::cout << "  S) Search         \n";

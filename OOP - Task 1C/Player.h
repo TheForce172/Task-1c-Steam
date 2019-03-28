@@ -4,7 +4,6 @@
 #include "LibraryItem.h"
 #include "User.h"
 #include "ListT.h"
-#include "Game.h"
 
 class Player : public User
 {
