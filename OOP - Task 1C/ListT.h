@@ -252,7 +252,7 @@ bool List<T>::contains(const T& item) const
 }
 
 template<class T>
-inline T List<T>::operator[](int index) const
+T List<T>::operator[](int index) const
 {
 	List<T> temp = *this;
 	for (int i = 0; i < index; i++) {

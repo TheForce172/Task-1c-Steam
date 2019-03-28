@@ -21,11 +21,11 @@ bool StoreMenu::HandleChoice(char choice)
 	// this puts '1' as 0, '2' as 1, '3' as 2, '4' as 3, etc.
 	// this reverses the + 1 above and lets us do the range check below
 	int index = choice - '1';
-
 	if (index >= 0 && index < games.length())
 	{
-		Question("Not implemented, press return to continue (");
+		//Question("Not implemented, press return to continue (");
 		// go to game detail page
+		GameMenu(Utils::toUpperA(games[index]->GetName()), app,games[index]);
 	}
 
 	return false;

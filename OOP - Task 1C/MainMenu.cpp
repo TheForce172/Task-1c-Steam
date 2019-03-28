@@ -12,11 +12,14 @@ void MainMenu::OutputOptions()
 	if (app->IsUserLoggedIn())
 	{
 		Option('P', "View Profile");
-		Option('L', "Logout");
+		Option('L', "Logout of " + app->GetCurrentUser()->GetUsername());
+	}
+	else if (app->IsAccountLoggedIn()) {
+		Option('L', "Login User");
 	}
 	else
 	{
-		Option('L', "Login");
+		Option('L', "Login Account");
 	}
 }
 
@@ -38,11 +41,14 @@ bool MainMenu::HandleChoice(char choice)
 				app->LogoutUser();
 			}
 		}
-		else
+		else if(app->IsAccountLoggedIn())
 		{
 			// this would need to go to a LoginMenu - similar to StoreMenu
 			// instead we just set logged in to true on the main app object
 			LoginUserMenu("LOGIN", app);
+		}
+		else {
+			LoginAccountMenu("LOGIN", app);
 		}
 	} break;
 	case 'P':

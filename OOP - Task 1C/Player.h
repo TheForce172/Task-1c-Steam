@@ -11,6 +11,7 @@ class Player : public User
 		Player(const std::string&, const std::string&, const std::string&, const int&);
 		~Player();
 		List<LibraryItem*> getLibary() const;
+		void addToLibrary(LibraryItem*);
 	private:
 		List<LibraryItem*> library;
 };

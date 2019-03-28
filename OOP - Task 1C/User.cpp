@@ -12,3 +12,15 @@ const std::string& User::GetUsername() const
 {
 	return username;
 }
+
+const std::string& User::GetPassword() const {
+	return password;
+}
+const int User:: GetCredits() const {
+	return credits;
+
+}
+
+List<LibraryItem*> User::getLibary() const{
+	return NULL;
+}

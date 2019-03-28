@@ -45,7 +45,7 @@ void createHardcodedTestData()
 	a->addUser(u3);
 
 	// TODO: We need a login menu for accounts, for now we log in the only account
-	app.LoginAccount("alice@shu.ac.uk", "password");
+	//app.LoginAccount("alice@shu.ac.uk", "password");
 }
 
 char showMainMenuAndGetUserChoice()
@@ -170,43 +170,12 @@ void gameMenu(Game* game)
 }
 
 
-void loginUserMenu()
-{
-	bool readyToGoBack = false;
-
-	while (readyToGoBack == false)
-	{
-		int choice = showLoginUserMenuAndGetUserChoice(app.GetCurrentAccount());
-
-		switch (choice)
-		{
-			case 'B': {
-				readyToGoBack = true;
-			} break;
-			default: {
-				int index = choice - '1';
-
-				if (index >= 0 && index < 3) // TODO: Hardcoded, change when using List<T>
-				{
-					std::string username = app.GetCurrentAccount()->getUsers()[index]->GetUsername();
-
-					std::cout << "  Enter password for " << username << ": ";
-					if (app.LoginUser(username, Utils::getLineFromUser()))
-					{
-						readyToGoBack = true;
-					}
-				}
-			} break;
-		}
-	}
-}
-
 void main()
 {
 	// TODO: Remove call to dummy data, instead use Load and Save
-	createHardcodedTestData();
+	//createHardcodedTestData();
 
-	// TODO: app.Load();
+	app.Load();
 	MainMenu("MAIN MENU", &app);
-	// TODO: app.Save();
+	app.Save();
 }

@@ -12,11 +12,22 @@ Account::~Account()
 	}
 }
 
-const List<User*> Account::getUsers() const
+List<User*> Account::getUsers() const
 {
 	return users;
 }
 
 void Account::addUser(User* u) {
 	users.addAtEnd(u);
+}
+
+std::string Account::getEmail() {
+	return email;
+}
+
+std::string Account::getPassword() {
+	return password;
+}
+std::string Account::getCreated() {
+	return created;
 }

@@ -1,21 +1,32 @@
 #pragma once
 
-class Date
-{
-private:
-	int month, day, year;
+#include <ctime>	// for date functions
 
+#include <iomanip>
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Date {
 public:
-	Date();
-	Date(int, int, int);
-	~Date() {}
+	Date();	                
+	Date(int, int, int);	
 
-	static Date CurrentDate;
-	int getDay() const;
-	int getMonth() const;
-	int getYear() const;
+	int getDay() const;		
+	int getMonth() const;		
+	int getYear() const;		
 
-	void setDay(const int);
-	void setMonth(const int);
-	void setYear(const int);
+	void setDate(int, int, int);	
+	void setCurrentDate();    
+
+	bool operator==(const Date&) const;  	
+
+	ostream& putDataInStream(ostream&) const;	
+	istream& getDataFromStream(istream&);	
+private:
+	int day_, month_, year_;
 };
+
+ostream& operator<<(ostream&, const Date&);	
+istream& operator>>(istream&, Date&);	
+

@@ -9,8 +9,11 @@ class Account
 	public:
 		Account(const std::string&, const std::string&, const std::string&);
 		~Account();
-		const List<User*> getUsers() const;
+		List<User*> getUsers() const;
 		void addUser(User*);
+		std::string getEmail();
+		std::string getPassword();
+		std::string getCreated();
 	private:
 		List<User*> users;
 		std::string email;
