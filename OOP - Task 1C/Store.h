@@ -2,6 +2,7 @@
 
 #include "Game.h"
 #include "ListT.h"
+#include "User.h"
 
 class Store
 {
@@ -10,7 +11,10 @@ class Store
 		~Store();
 		List<Game*> getGames() const;
 		void addGame(Game*);
+		void SearchByName(string);
+		void SearchByRating(Game*);
+		void SearchByPrice(Game*);
 
 	private:
-		List<Game*> games; // TODO: should be a dynamic collection
+		List<Game*> games; 
 };

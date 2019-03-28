@@ -1,6 +1,6 @@
 #include "User.h"
 
-User::User(const std::string& username, const std::string& password, const std::string& created, const int& credits) : username(username), password(password), created(created), credits(credits)
+User::User(const std::string& username, const std::string& password, const Date& created, const int& credits) : username(username), password(password), created_(created), credits(credits)
 {
 }
 
@@ -23,4 +23,8 @@ const int User:: GetCredits() const {
 
 List<LibraryItem*> User::getLibary() const{
 	return NULL;
+}
+
+const Date& User::getCreated() const {
+	return created_;
 }
