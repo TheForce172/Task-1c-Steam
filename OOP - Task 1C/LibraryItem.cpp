@@ -12,8 +12,7 @@ LibraryItem::LibraryItem(const std::string& date, Game* game, int playTime) : pu
 LibraryItem::~LibraryItem()
 {
 }
-
-const Game* LibraryItem::getGame() {
+Game* LibraryItem::getGame() {
 	return game;
 }
 
