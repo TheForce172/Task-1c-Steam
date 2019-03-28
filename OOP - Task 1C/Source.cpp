@@ -90,6 +90,7 @@ char showStoreMenuAndGetUserChoice()
 
 	// TODO: Implement search store option
 	std::cout << "                    \n";
+	std::cout << "  PAGE " " Of " "   \n";
 	std::cout << "  S) Search         \n";
 	std::cout << "  N) Next Page      \n";
 
