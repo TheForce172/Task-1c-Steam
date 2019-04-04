@@ -161,9 +161,10 @@ void gameMenu(Game* game)
 		switch (choice)
 		{
 			case 'P': {
-				if (app.IsUserLoggedIn())
+				if (app.IsUserLoggedIn() && credits >= game.Cost && gameIsNotOwned)
 				{
 					// TODO: Implement buying from the store
+					game.purchased = true;
 				}
 			} break;
 			case 'B': {
