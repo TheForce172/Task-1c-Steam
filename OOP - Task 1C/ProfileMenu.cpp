@@ -10,8 +10,3 @@ ProfileMenu::ProfileMenu(const std::string& title, Application * app, User* acco
 	Paint(); // required in constructor
 
 }
-
-
-ProfileMenu::~ProfileMenu()
-{
-}

@@ -12,7 +12,7 @@ class LibraryItem
 		std::string getCreated();
 		int getTime();
 	private:
-		const Game *game;
+		Game* game;
 		const std::string purchased;  // TODO: replace with custom Date class, currently YYYY-MM-DD
 		int playTime;
 };
