@@ -102,7 +102,8 @@ void Application::Load() {
 				getline(Load, created);
 				getline(Load, email);
 				getline(Load, password);
-				Date date = created;
+				Date date;
+				date = created;
 				currentload = new Account(email, password, date);
 				addAccount(currentload);
 				hasAdmin = false;
@@ -117,14 +118,16 @@ void Application::Load() {
 				getline(Load, username);
 				getline(Load, password);
 				getline(Load, credit);
+				Date date;
+				date = created;
 				if (hasAdmin == false) {
 
-					currentUser = new Admin(username, password, created, stoi(credit));
+					currentUser = new Admin(username, password, date, stoi(credit));
 					hasAdmin = true;
 
 				}
 				else {
-					currentUser = new Player(username, password, created, stoi(credit));
+					currentUser = new Player(username, password, date, stoi(credit));
 				}
 
 				currentload->addUser(currentUser);

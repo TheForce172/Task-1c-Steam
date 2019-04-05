@@ -13,19 +13,3 @@ ProfileMenu::ProfileMenu(const std::string& title, Application * app, User* acco
 
 }
 
-void ProfileMenu::OutputOptions()
-{
-
-
-
-
-}
-
-bool ProfileMenu::HandleChoice(char choice)
-{
-
-
-
-
-	return false;
-}
