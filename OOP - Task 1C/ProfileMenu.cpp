@@ -27,6 +27,10 @@ void ProfileMenu::OutputOptions()
 	}
 	if (typeid(account).name == "Admin") {
 
+		Line("ADMINISTAOR");
+		Option('A', "Add New User");
+		Option('R', "Remove User");
+
 	}
 
 }
