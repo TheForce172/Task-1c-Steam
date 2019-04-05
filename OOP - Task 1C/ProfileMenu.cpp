@@ -13,3 +13,30 @@ ProfileMenu::ProfileMenu(const std::string& title, Application * app, User* acco
 
 }
 
+void ProfileMenu::OutputOptions()
+{
+	Line("Credits:");
+	Option('I',"Purches 1 Credit");
+	Option('o', "Purches 10 Credits");
+	Option('p', "Purches 1 00 Credits");
+	Line();
+	Line("GAMES");
+	for (int i = 0; i < games.length(); i++) {
+
+		Option(i, games[i]->GetName);
+
+	
+	
+	}
+
+
+}
+
+bool ProfileMenu::HandleChoice(char choice)
+{
+
+
+
+
+	return false;
+}
