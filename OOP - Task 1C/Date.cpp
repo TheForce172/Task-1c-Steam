@@ -41,6 +41,13 @@ bool Date::operator==(const Date& d) const {
 		(year_ == d.year_);
 }
 
+bool Date::operator=(const string string)
+{
+	year_ = stoi(string.substr(0, 3));
+	month_ = stoi(string.substr(5, 6));
+	day_ = stoi(string.substr(8, 9));
+}
+
 ostream& Date::putDataInStream(ostream& os) const {
 	os << setfill('0');
 	os << setw(2) << day_ << "/";

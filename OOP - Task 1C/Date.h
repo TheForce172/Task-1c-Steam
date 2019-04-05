@@ -19,7 +19,8 @@ public:
 	void setDate(int, int, int);	
 	void setCurrentDate();    
 
-	bool operator==(const Date&) const;  	
+	bool operator==(const Date&) const; 
+	bool operator=(const Date&) const;
 
 	ostream& putDataInStream(ostream&) const;	
 	istream& getDataFromStream(istream&);	
