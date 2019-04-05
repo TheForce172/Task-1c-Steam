@@ -9,6 +9,23 @@ ProfileMenu::ProfileMenu(const std::string& title, Application * app, User* acco
 			games.addAtEnd(account->getLibary()[i]->getGame());
 		}
 	}
-	Paint(); // required in constructor
+	Paint(); 
 
+}
+
+void ProfileMenu::OutputOptions()
+{
+
+
+
+
+}
+
+bool ProfileMenu::HandleChoice(char choice)
+{
+
+
+
+
+	return false;
 }
