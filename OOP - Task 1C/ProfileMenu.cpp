@@ -24,11 +24,10 @@ void ProfileMenu::OutputOptions()
 	for (int i = 0; i < games.length(); i++) {
 
 		Option(i, games[i]->GetName);
-
-	
-	
 	}
+	if (typeid(account).name == "Admin") {
 
+	}
 
 }
 
