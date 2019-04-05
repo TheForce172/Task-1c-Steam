@@ -17,6 +17,6 @@ class User
 	private:
 		std::string username;
 		std::string password;
-		const Date created_;
+		Date created_;
 		int credits;
 };

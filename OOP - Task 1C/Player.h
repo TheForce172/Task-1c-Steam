@@ -8,7 +8,7 @@
 class Player : public User
 {
 	public:
-		Player(const std::string&, const std::string&, const std::string&, const int&);
+		Player(const std::string&, const std::string&, const Date &, const int&);
 		~Player();
 		List<LibraryItem*> getLibary() const;
 		void addToLibrary(LibraryItem*);

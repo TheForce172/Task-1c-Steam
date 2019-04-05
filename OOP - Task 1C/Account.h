@@ -18,5 +18,5 @@ class Account
 		List<User*> users;
 		std::string email;
 		std::string password;
-		const Date created_; 
+		Date created_; 
 };
