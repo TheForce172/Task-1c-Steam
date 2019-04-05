@@ -169,6 +169,7 @@ void Application::Save() {
 
 			for (int j = 0; j < accounts[i]->getUsers().length(); j++) {
 				Save << "ACCOUNT-USER" << "\n";
+				Save << accounts[i]->getUsers()[j]->getCreated() << "\n";
 				Save << accounts[i]->getUsers()[j]->GetUsername() << "\n";
 				Save << accounts[i]->getUsers()[j]->GetPassword() << "\n";
 				Save << accounts[i]->getUsers()[j]->GetCredits() << "\n";

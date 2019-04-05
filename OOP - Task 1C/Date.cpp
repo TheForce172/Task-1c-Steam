@@ -43,7 +43,7 @@ bool Date::operator==(const Date& d) const {
 
 void Date::operator=(const string string)
 {
-	year_ = stoi(string.substr(0, 3));
+	year_ = stoi(string.substr(0, 4));
 	month_ = stoi(string.substr(5, 6));
 	day_ = stoi(string.substr(8, 9));
 
