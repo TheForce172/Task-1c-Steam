@@ -37,7 +37,19 @@ void ProfileMenu::OutputOptions()
 
 bool ProfileMenu::HandleChoice(char choice)
 {
+	switch (choice) {
+	
+	
+	case 'A': {
 
+		
+		std::string user = Question(" Enter User Name ");
+		std::string password = Question("Enter Password");
+		app->GetCurrentAccount()->addUser() new player(user, password, new Date(),0);
+		
+	         }
+
+	}
 
 
 
