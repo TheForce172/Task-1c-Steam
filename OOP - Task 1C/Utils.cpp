@@ -22,10 +22,10 @@ std::string Utils::toUpperA(std::string A){
 }
 
 std::string Utils::toUpperB(std::string A) {
-	if (A.length() == 1) {
-		return A + (char)std::toupper(A.at(0));	
+	if (A.length() == 0) {
+		return A;
 	}else{ 
-		return toUpperB(A.substr(0, A.length() - 1));
+		return static_cast<char>(toupper(A[0])) + toUpperB(A.substr(1));
 	}
 	                               // for the recurrcive way
 }

@@ -18,7 +18,7 @@ void Store::addGame(Game* g) {
 	games.addAtEnd(g);
 }
 
-void Store::SearchGames() const {
+/*void Store::SearchGames() const {
 	StoreMenu.showSearchMenu();
 	int option = StoreMenu.readInSearchOption();
 	switch (option)
@@ -36,7 +36,7 @@ void Store::SearchGames() const {
 	default:
 		break;
 	}
-}
+}*/
 
 void Store::showSearchForName() const {
 

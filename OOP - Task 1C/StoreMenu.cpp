@@ -24,11 +24,11 @@ void StoreMenu::showSearchMenu() const
 	cout << " 3           Exit search menu";
 
 }
-
+/*
 int StoreMenu::readInSearchOption() const
 {
 	return Option();
-}
+}*/
  
 bool StoreMenu::HandleChoice(char choice)
 {
