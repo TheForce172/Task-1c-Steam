@@ -15,6 +15,21 @@ void StoreMenu::OutputOptions()
 	}
 }
 
+void StoreMenu::showSearchMenu() const
+{
+	cout << "Search Menu";
+	cout << " 0           Search By Name /n";
+	cout << " 1           Search By Cost /n";
+	cout << " 2           Search By AgeRating/n";
+	cout << " 3           Exit search menu";
+
+}
+
+int StoreMenu::readInSearchOption() const
+{
+	return Option();
+}
+ 
 bool StoreMenu::HandleChoice(char choice)
 {
 	// since we are using numbers here we shift the char down by '1'
@@ -29,4 +44,6 @@ bool StoreMenu::HandleChoice(char choice)
 	}
 
 	return false;
+
+
 }

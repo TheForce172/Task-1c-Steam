@@ -26,10 +26,11 @@ std::string Utils::toUpperB(std::string A) {
 		return A;
 	
 	
-	}else{
-	 
-		return toUpperB(A.substr(0), A.lenght)
-	
+	}
+	else {
+
+		return toUpperB(A.substr(0), A.length);
+
 	}
 	                               // for the recurrcive way 
 	return NULL;
