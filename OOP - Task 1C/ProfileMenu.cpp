@@ -48,7 +48,14 @@ bool ProfileMenu::HandleChoice(char choice)
 		Date date;
 		app->GetCurrentAccount()->addUser( new Player(user,password,date,0));
 		
-	         }
+	} break;
+
+	case 'R': {
+
+		RemoveUserMenu("REMOVE USER",app);
+		
+	
+	}
 
 	}
 
