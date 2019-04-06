@@ -24,15 +24,15 @@ std::string Utils::toUpperA(std::string A){
 std::string Utils::toUpperB(std::string A) {
 	if (A.length() == 0) {
 		return A;
-	}else{ 
+	}
+	else {
 		return static_cast<char>(toupper(A[0])) + toUpperB(A.substr(1));
 	}
+}
 	                      // for the recurrcive way
 
-	int  Utils::ramdonNum(){
+int Utils::ramdonNum(){
 
-		ramdonNum = rand % 100;
+		int ramdonNum = rand % 100;
 	
-	}
-
 }
