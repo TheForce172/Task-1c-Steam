@@ -21,6 +21,10 @@ void Account::addUser(User* u) {
 	users.addAtEnd(u);
 }
 
+void Account::removeUser(User* u) {
+	users.deleteOne(u);
+}
+
 std::string Account::getEmail() {
 	return email;
 }

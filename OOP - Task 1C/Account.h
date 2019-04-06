@@ -14,6 +14,7 @@ class Account
 		std::string getEmail();
 		std::string getPassword();
 		const Date& getCreated() const;
+		void removeUser(User* u);
 	private:
 		List<User*> users;
 		std::string email;
