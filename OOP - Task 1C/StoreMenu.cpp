@@ -45,5 +45,4 @@ bool StoreMenu::HandleChoice(char choice)
 
 	return false;
 
-
 }
