@@ -25,7 +25,8 @@ void ProfileMenu::OutputOptions()
 
 		Option(i, games[i]->GetName());
 	}
-	if (typeid(account).name() == "Admin") {
+	Line();
+	if (typeid(*account) == typeid(Admin)) {
 
 		Line("ADMINISTAOR");
 		Option('A', "Add New User");

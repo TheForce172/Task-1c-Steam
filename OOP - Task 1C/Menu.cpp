@@ -34,6 +34,7 @@ void Menu::Line()
 	std::cout << '\n';
 }
 
+
 void Menu::Line(const std::string& text)
 {
 	std::cout << "  " << text << "\n";
