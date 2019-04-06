@@ -45,7 +45,8 @@ bool ProfileMenu::HandleChoice(char choice)
 		
 		std::string user = Question(" Enter User Name ");
 		std::string password = Question("Enter Password");
-		app->GetCurrentAccount()->addUser() new player(user, password, new Date(),0);
+		Date date;
+		app->GetCurrentAccount()->addUser( new Player(user,password,date,0));
 		
 	         }
 
