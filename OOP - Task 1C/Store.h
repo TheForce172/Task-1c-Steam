@@ -11,9 +11,10 @@ class Store
 		~Store();
 		List<Game*> getGames() const;
 		void addGame(Game*);
-		void SearchByName(string);
-		void SearchByRating(Game*);
-		void SearchByPrice(Game*);
+		void SearchGames() const;
+		void showSearchForName() const;
+		void showSearchForageRating() const;
+		void showSearchForCost() const;
 
 	private:
 		List<Game*> games; 
