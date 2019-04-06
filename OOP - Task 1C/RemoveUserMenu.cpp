@@ -24,7 +24,7 @@ bool RemoveUserMenu::HandleChoice(char choice)
 	int index = choice;
 	if (index < 0 && index < app->GetCurrentAccount()->getUsers().length) {
 	
-		app->GetCurrentAccount().
+		app->GetCurrentAccount()->removeUser(app->GetCurrentAccount()->getUsers()[index]);
 
 	}
 
