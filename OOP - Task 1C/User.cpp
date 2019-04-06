@@ -22,9 +22,6 @@ const int User:: GetCredits() const {
 
 }
 
-List<LibraryItem*> User::getLibary() const{
-	return NULL;
-}
 
 const Date& User::getCreated() const {
 	return created_;

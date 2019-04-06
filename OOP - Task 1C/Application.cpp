@@ -175,7 +175,7 @@ void Application::Save() {
 				Save << accounts[i]->getUsers()[j]->GetCredits() << "\n";
 				Player* user = dynamic_cast<Player*>(accounts[i]->getUsers()[j]);
 				if (user)
-				for (int k = 0; k < user->getLibary().length(); k++) {
+				for (int k = 0; k < user->getLibary().size(); k++) {
 					Save << "ACCOUNT-USER-GAME" << "\n";
 					List<Game*> temp = store.getGames();
 					for (int l = 0; l < temp.length(); l++) {
