@@ -21,10 +21,10 @@ void Store::SearchByName(string) {
 	
 }
 
-void Store::SearchByRating(Game* g) {
+void Store::SearchByRating(int) {
 
 }
 
-void Store::SearchByPrice(Game* g) {
+void Store::SearchByPrice(int) {
 
 }

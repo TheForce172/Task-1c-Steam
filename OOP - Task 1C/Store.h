@@ -12,8 +12,8 @@ class Store
 		List<Game*> getGames() const;
 		void addGame(Game*);
 		void SearchByName(string);
-		void SearchByRating(Game*);
-		void SearchByPrice(Game*);
+		void SearchByRating(int);
+		void SearchByPrice(int);
 
 	private:
 		List<Game*> games; 
