@@ -19,7 +19,15 @@ void RemoveUserMenu::OutputOptions()
 }
 
 bool RemoveUserMenu::HandleChoice(char choice)
-{
+{		
+	
+	int index = choice;
+	if (index < 0 && index < app->GetCurrentAccount()->getUsers().length) {
+	
+		app->GetCurrentAccount().
+
+	}
+
 	return false;
 }
 
