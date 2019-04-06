@@ -27,5 +27,12 @@ std::string Utils::toUpperB(std::string A) {
 	}else{ 
 		return static_cast<char>(toupper(A[0])) + toUpperB(A.substr(1));
 	}
-	                               // for the recurrcive way
+	                      // for the recurrcive way
+
+	int  Utils::ramdonNum(){
+
+		ramdonNum = rand % 100;
+	
+	}
+
 }
