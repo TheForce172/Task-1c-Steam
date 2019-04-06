@@ -1,6 +1,7 @@
 #pragma once
 #include "Date.h"
 #include <string>
+#include <vector>
 #include "LibraryItem.h"
 #include "ListT.h"
 class User
@@ -12,7 +13,6 @@ class User
 		const std::string& GetUsername() const;
 		const std::string& GetPassword() const;
 		const  int GetCredits() const;
-		virtual List<LibraryItem*> getLibary() const;
 		const Date& getCreated() const;
 	private:
 		std::string username;

@@ -56,7 +56,7 @@ bool MainMenu::HandleChoice(char choice)
 	{
 		if (app->IsUserLoggedIn())
 		{
-			ProfileMenu(app->GetCurrentUser()->GetUsername()+"'\S PFOFILE",app,app->GetCurrentUser());
+			ProfileMenu(app->GetCurrentUser()->GetUsername()+"'S PFOFILE",app,app->GetCurrentUser());
 
 
 
