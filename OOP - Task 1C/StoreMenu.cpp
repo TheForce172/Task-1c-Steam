@@ -25,7 +25,7 @@ bool StoreMenu::HandleChoice(char choice)
 	{
 		//Question("Not implemented, press return to continue (");
 		// go to game detail page
-		GameMenu(Utils::toUpperA(games[index]->GetName()), app,games[index]);
+		GameMenu(Utils::toUpperB(games[index]->GetName()), app,games[index]);
 	}
 
 	return false;
