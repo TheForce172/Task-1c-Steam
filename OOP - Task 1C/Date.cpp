@@ -54,7 +54,6 @@ ostream& Date::putDataInStream(ostream& os) const {
 	os << setw(4) << year_ << "-";
 	os << setw(2) << month_ << "-";
 	os << setw(2) << day_;
-	os << setw(4) << year_;
 	os << setfill(' ');
 	return os;
 }

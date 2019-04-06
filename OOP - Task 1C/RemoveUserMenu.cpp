@@ -9,9 +9,9 @@ RemoveUserMenu::RemoveUserMenu(const std::string& title, Application * app) : Me
 
 void RemoveUserMenu::OutputOptions()
 {
-	for (int i = 1; i < app->GetCurrentAccount()->getUsers().length; i++) {
+	for (int i = 1; i < app->GetCurrentAccount()->getUsers().length(); i++) {
 	
-		Option(i, app->GetCurrentAccount()->getUsers()[i]->GetUsername);
+		Option(i, app->GetCurrentAccount()->getUsers()[i]->GetUsername());
 
 	
 	}
@@ -22,7 +22,7 @@ bool RemoveUserMenu::HandleChoice(char choice)
 {		
 	
 	int index = choice;
-	if (index < 0 && index < app->GetCurrentAccount()->getUsers().length) {
+	if (index < 0 && index < app->GetCurrentAccount()->getUsers().length()) {
 	
 		app->GetCurrentAccount()->removeUser(app->GetCurrentAccount()->getUsers()[index]);
 
