@@ -53,11 +53,11 @@ Split your brain into two thumbs.
 799
 15
 ACCOUNT
-16/06/2017
+2017-06-16
 alice@shu.com
 password
 ACCOUNT-USER
-16/06/2017
+2017-06-16
 Alice
 password
 900
@@ -70,7 +70,7 @@ ACCOUNT-USER-GAME
 2017-06-18
 0
 ACCOUNT-USER
-19/09/2017
+2017-09-19
 Bob
 password
 1000
@@ -83,7 +83,7 @@ ACCOUNT-USER-GAME
 2017-09-19
 135
 ACCOUNT-USER
-24/09/2017
+2017-09-24
 Charlie
 password
 500
