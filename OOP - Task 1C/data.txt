@@ -57,6 +57,7 @@ ACCOUNT
 alice@shu.com
 password
 ACCOUNT-USER
+2017-06-16
 Alice
 password
 900
@@ -69,6 +70,7 @@ ACCOUNT-USER-GAME
 2017-06-18
 0
 ACCOUNT-USER
+2017-09-19
 Bob
 password
 1000
@@ -81,6 +83,7 @@ ACCOUNT-USER-GAME
 2017-09-19
 135
 ACCOUNT-USER
+2017-09-24
 Charlie
 password
 500

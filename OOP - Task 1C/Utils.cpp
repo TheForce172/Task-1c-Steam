@@ -16,13 +16,21 @@ char Utils::getCharFromUser()
 std::string Utils::toUpperA(std::string A){
 	std::string big = A;
 	for (int i = 0; i < A.length(); i++) {
-		big[i] = (char)std::toupper(A.at(i));
+		big[i] = (char)std::toupper(A.at(i));  // loop way
 	}
 	return big;
 }
 
 std::string Utils::toUpperB(std::string A) {
-
-	// for the recurrcive way
+	if (A.length() == 0) {
+		return A;
+	
+	
+	}else{
+	 
+		return toUpperB(A.substr(0), A.lenght)
+	
+	}
+	                               // for the recurrcive way 
 	return NULL;
 }

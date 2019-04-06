@@ -1,8 +1,9 @@
 #include "MainMenu.h"
+#include "ProfileMenu.h"
 
 MainMenu::MainMenu(const std::string& title, Application * app) : Menu(title, app)
 {
-	Paint(); // required in constructor
+	Paint(); 
 }
 
 void MainMenu::OutputOptions()
@@ -55,7 +56,10 @@ bool MainMenu::HandleChoice(char choice)
 	{
 		if (app->IsUserLoggedIn())
 		{
-			Question("Not implemented, press return to continue (");
+			ProfileMenu(app->GetCurrentUser()->GetUsername()+"'\S PFOFILE",app,app->GetCurrentUser());
+
+
+
 			// this needs to go to a profile page - similar to StoreMenu
 			// notice the if - this only works if somebody is logged in
 		}
