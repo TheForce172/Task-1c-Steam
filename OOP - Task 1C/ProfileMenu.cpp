@@ -43,7 +43,7 @@ void ProfileMenu::OutputOptions()
 		}
 		else {
 			time = (games[i]->getTime() / 60) / 1.0f;
-			roundl(time);
+			round(time);
 			played = to_string(time) + "Hrs";
 		}
 		Option(i + 1, games[i]->getGame()->GetName() + " (" + played + ") ");
@@ -97,6 +97,13 @@ bool ProfileMenu::HandleChoice(char choice)
 		case 'P': {
 			app->GetCurrentUser()->AddCredits(100);
 		}break;
+	}
+	int index = choice - '1';
+	if (index >= 0 && index < games.size())
+	{
+		//Question("Not implemented, press return to continue (");
+		// go to game detail page
+		games[index]->addTime();
 	}
 	return false;
 }
