@@ -30,7 +30,22 @@ void ProfileMenu::OutputOptions()
 	Line();
 	Line("GAMES");
 	for (int i = 0; i < games.size(); i++) {
-		Option(i, games[i]->getGame()->GetName());
+		double time;
+		string played;
+		if (games[i]->getTime() < 60) {
+			time = games[i]->getTime();
+			played = to_string(time) + "Mins";
+		}
+		else if (games[i]->getTime() > 60 && games[i]->getTime() < 300) {
+			time = games[i]->getTime() / 60;
+			played = to_string(time) + "Hrs";
+		}
+		else {
+			time = games[i]->getTime() / 60;
+			roundl(time);
+			played = to_string(time) + "Hrs";
+		}
+		Option(i, games[i]->getGame()->GetName() + " (" + played + ") ");
 	}
 	Line();
 	if (sortName == true) {
@@ -72,6 +87,13 @@ bool ProfileMenu::HandleChoice(char choice)
 				sortName = true;
 			}
 		}
+	}
+	int index = choice - '1';
+	if (index >= 0 && index < games.size())
+	{
+		//Question("Not implemented, press return to continue (");
+		// go to game detail page
+		games[index]->addTime();
 	}
 	//TOM YOU NEED TO ADD CREDITS OPTION HANLING HERE
 	return false;

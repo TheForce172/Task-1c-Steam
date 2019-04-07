@@ -11,7 +11,7 @@ class Utils
     static char getCharFromUser();
 	static std::string toUpperA(std::string); // for loop
 	static std::string toUpperB(std::string); // recurrsive way 
-	int ramdonNum();
+	static int ramdonNum();
 
 };
 

@@ -2,6 +2,7 @@
 
 #include "Game.h"
 #include "Date.h"
+#include "Utils.h"
 class LibraryItem
 {
 	public:
@@ -10,7 +11,8 @@ class LibraryItem
 		~LibraryItem();
 		Game *getGame();
 		Date getCreated();
-		int getTime();
+		int getTime() const;
+		void addTime();
 	private:
 		Game* game;
 		const Date purchased;  // TODO: replace with custom Date class, currently YYYY-MM-DD
