@@ -14,10 +14,10 @@ class User
 		const std::string& GetPassword() const;
 		const  int GetCredits() const;
 		const Date& getCreated() const;
-		int AddCredits;
+		void AddCredits(double c);
 	private:
 		std::string username;
 		std::string password;
 		Date created_;
-		int credits;
+		double credits;
 };

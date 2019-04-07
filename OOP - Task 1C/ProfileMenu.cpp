@@ -87,19 +87,16 @@ bool ProfileMenu::HandleChoice(char choice)
 				std::sort(games.begin(), games.end(), nameSort);
 				sortName = true;
 			}
-		}
-	}
-
-	switch (choice) {
+		} break;
 		case 'I': {
-			app->GetCurrentUser()->AddCredits() ++;
-		}
+			app->GetCurrentUser()->AddCredits(1);
+		}break;
 		case 'O': {
-			app->GetCurrentUser()->AddCredits() + 10;
-		}	
+			app->GetCurrentUser()->AddCredits(10);
+		}	break;
 		case 'P': {
-			app->GetCurrentUser()->AddCredits() + 100;
-		}
+			app->GetCurrentUser()->AddCredits(100);
+		}break;
 	}
 	return false;
 }

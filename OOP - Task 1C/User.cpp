@@ -26,3 +26,8 @@ const int User:: GetCredits() const {
 const Date& User::getCreated() const {
 	return created_;
 }
+
+void User::AddCredits(double c)
+{
+	credits + c;
+}
