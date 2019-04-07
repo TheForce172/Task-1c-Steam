@@ -28,14 +28,16 @@ std::string Utils::toUpperB(std::string A) {
 	else {
 		return static_cast<char>(toupper(A[0])) + toUpperB(A.substr(1));
 	}
-}
+}	
 	                      // for the recurrcive way
 
 int Utils::ramdonNum(){
 
-		int lowest = 1, highest = 0;
+		int lowest = 1, highest = 60;
 		int range = (highest - lowest) + 1;
 
-		int randomNum = lowest + rand() % range;
+		int randNum = lowest + rand() % range;
+		 
+		return randNum;
 
 }
