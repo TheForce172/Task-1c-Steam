@@ -12,7 +12,7 @@ class User
 		virtual ~User();
 		const std::string& GetUsername() const;
 		const std::string& GetPassword() const;
-		const  int GetCredits() const;
+		const  double GetCredits() const;
 		const Date& getCreated() const;
 		void AddCredits(double c);
 	private:

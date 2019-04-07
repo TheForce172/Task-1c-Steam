@@ -17,7 +17,7 @@ const std::string& User::GetUsername() const
 const std::string& User::GetPassword() const {
 	return password;
 }
-const int User:: GetCredits() const {
+const double User:: GetCredits() const {
 	return credits;
 
 }
@@ -29,5 +29,5 @@ const Date& User::getCreated() const {
 
 void User::AddCredits(double c)
 {
-	credits + c;
+	credits =+ c;
 }
