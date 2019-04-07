@@ -20,6 +20,10 @@ Date LibraryItem::getCreated() {
 	return purchased;
 }
 
-int LibraryItem::getTime() {
+int LibraryItem::getTime() const{
 	return playTime;
+}
+
+void LibraryItem::addTime() {
+	playTime = playTime + Utils::ramdonNum();
 }

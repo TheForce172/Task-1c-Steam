@@ -30,7 +30,23 @@ void ProfileMenu::OutputOptions()
 	Line();
 	Line("GAMES");
 	for (int i = 0; i < games.size(); i++) {
-		Option(i, games[i]->getGame()->GetName());
+		double time;
+
+		string played;
+		if (games[i]->getTime() < 60) {
+			time = games[i]->getTime() / 1.0f;
+			played = to_string(time) + "Mins";
+		}
+		else if (games[i]->getTime() > 60 && games[i]->getTime() < 300) {
+			time = (games[i]->getTime() / 60) /1.0f;
+			played = to_string(time) + "Hrs";
+		}
+		else {
+			time = (games[i]->getTime() / 60) / 1.0f;
+			roundl(time);
+			played = to_string(time) + "Hrs";
+		}
+		Option(i + 1, games[i]->getGame()->GetName() + " (" + played + ") ");
 	}
 	Line();
 	if (sortName == true) {
