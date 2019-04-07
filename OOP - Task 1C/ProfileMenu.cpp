@@ -73,6 +73,17 @@ bool ProfileMenu::HandleChoice(char choice)
 			}
 		}
 	}
-	//TOM YOU NEED TO ADD CREDITS OPTION HANLING HERE
+
+	switch (choice) {
+		case 'I': {
+			app->GetCurrentUser()->AddCredits() ++;
+		}
+		case 'O': {
+			app->GetCurrentUser()->AddCredits() + 10;
+		}	
+		case 'P': {
+			app->GetCurrentUser()->AddCredits() + 100;
+		}
+	}
 	return false;
 }

@@ -14,6 +14,7 @@ class User
 		const std::string& GetPassword() const;
 		const  int GetCredits() const;
 		const Date& getCreated() const;
+		int AddCredits;
 	private:
 		std::string username;
 		std::string password;
