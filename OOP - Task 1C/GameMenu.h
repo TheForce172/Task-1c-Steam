@@ -10,5 +10,6 @@ public:
 
 private:
 	Game* game;
+	bool owned = false;
 };
 
