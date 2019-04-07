@@ -26,7 +26,7 @@ void ProfileMenu::OutputOptions()
 	Line("Credits:");
 	Option('I', "Purches 1 Credit");
 	Option('O', "Purches 10 Credits");
-	Option('P', "Purches 1 00 Credits");
+	Option('P', "Purches 100 Credits");
 	Line();
 	Line("GAMES");
 	for (int i = 0; i < games.size(); i++) {

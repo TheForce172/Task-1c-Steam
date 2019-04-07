@@ -41,6 +41,19 @@ bool Date::operator==(const Date& d) const {
 		(year_ == d.year_);
 }
 
+bool Date::operator<(const Date & rhs) const
+{
+	if (!(rhs.year_ < year_)) {
+		if (!(rhs.month_ < month_)) {
+			if (!(rhs.day_ < day_)) {
+				return false;
+			}
+		}
+			
+	}
+	return true;
+}
+
 void Date::operator=(const string string)
 {
 	year_ = stoi(string.substr(0, 4));
