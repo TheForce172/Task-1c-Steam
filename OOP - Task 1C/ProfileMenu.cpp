@@ -9,14 +9,14 @@ ProfileMenu::ProfileMenu(const std::string& title, Application * app, User* acco
 			games.addAtEnd(dynamic_cast<Player*>(account)->getLibary()[i]->getGame());
 		}
 	}
-	Paint(); 
+	Paint();
 
 }
 
 void ProfileMenu::OutputOptions()
 {
 	Line("Credits:");
-	Option('I',"Purches 1 Credit");
+	Option('I', "Purches 1 Credit");
 	Option('O', "Purches 10 Credits");
 	Option('P', "Purches 1 00 Credits");
 	Line();
@@ -39,28 +39,16 @@ void ProfileMenu::OutputOptions()
 bool ProfileMenu::HandleChoice(char choice)
 {
 	switch (choice) {
-	
-	
-	case 'A': {
-
-		
-		std::string user = Question(" Enter User Name ");
-		std::string password = Question("Enter Password");
-		Date date;
-		app->GetCurrentAccount()->addUser( new Player(user,password,date,0));
-		
-	} break;
-
-	case 'R': {
-
-		RemoveUserMenu("REMOVE USER",app);
-		
-	
+		case 'A': {
+			std::string user = Question(" Enter User Name ");
+			std::string password = Question("Enter Password");
+			Date date;
+			app->GetCurrentAccount()->addUser(new Player(user, password, date, 0));
+		} break;
+		case 'R': {
+			RemoveUserMenu("REMOVE USER", app);
+		}
 	}
-
-	}
-
-
-
+	//TOM YOU NEED TO ADD CREDITS OPTION HANLING HERE
 	return false;
 }

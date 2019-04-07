@@ -13,22 +13,9 @@ void StoreMenu::OutputOptions()
 		// adding 1 so the display is nicer for the user
 		Option(i + 1, games[i]->GetName());
 	}
-}
 
-void StoreMenu::showSearchMenu() const
-{
-	cout << "Search Menu";
-	cout << " 0           Search By Name /n";
-	cout << " 1           Search By Cost /n";
-	cout << " 2           Search By AgeRating/n";
-	cout << " 3           Exit search menu";
-
+	Option('S', "Search");
 }
-/*
-int StoreMenu::readInSearchOption() const
-{
-	return Option();
-}*/
  
 bool StoreMenu::HandleChoice(char choice)
 {
