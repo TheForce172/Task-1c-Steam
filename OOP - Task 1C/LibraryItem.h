@@ -1,11 +1,11 @@
 #pragma once
 
 #include "Game.h"
-
+#include "Date.h"
 class LibraryItem
 {
 	public:
-		LibraryItem(const std::string&, Game*);
+		LibraryItem(const Date&, Game*);
 		LibraryItem(const std::string&, Game*, int);
 		~LibraryItem();
 		Game *getGame();

@@ -1,5 +1,7 @@
 #pragma once
 #include "Menu.h"
+#include <vector>
+#include <algorithm>
 #include "RemoveUserMenu.h"
 
 class ProfileMenu :
@@ -12,7 +14,7 @@ public:
 
 private:
 	User* account;
-	List<Game*> games;
-
+	std::vector<LibraryItem*> games;
+	bool sortName;
 };
 
