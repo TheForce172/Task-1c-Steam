@@ -31,8 +31,8 @@ std::string Utils::toUpperB(std::string A) {
 }
 	                      // for the recurrcive way
 
-int Utils::ramdonNum(){
+//int Utils::ramdonNum(){
 
-		int ramdonNum = rand % 100;
+		//int ramdonNum = rand % 100;
 	
-}
+//}
