@@ -84,6 +84,12 @@
     <ClCompile Include="RemoveUserMenu.cpp">
       <Filter>Source Files\Menu</Filter>
     </ClCompile>
+    <ClCompile Include="SearchMenu.cpp">
+      <Filter>Source Files\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchResultsMenu.cpp">
+      <Filter>Source Files\Menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="User.h">
@@ -144,6 +150,12 @@
       <Filter>Header Files\Menu</Filter>
     </ClInclude>
     <ClInclude Include="RemoveUserMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchResultsMenu.h">
       <Filter>Header Files\Menu</Filter>
     </ClInclude>
   </ItemGroup>
