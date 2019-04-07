@@ -16,20 +16,16 @@ void GameMenu::OutputOptions()
 }
 
 bool GameMenu::HandleChoice(char choice)
-{
-	if (app->IsUserLoggedIn()) {
-		Option('S', "Search");
-		Option('N', "Next Page");
-	}
+{	
 	// since we are using numbers here we shift the char down by '1'
 	// this puts '1' as 0, '2' as 1, '3' as 2, '4' as 3, etc.
 	// this reverses the + 1 above and lets us do the range check below
 	//int index = choice - '1';
 	//if (index >= 0 && index < games.length())
 	//{
-		//----///Question("Not implemented, press return to continue (");
-		// go to game detail page
-		//GameMenu(Utils::toUpperA(games[index]->GetName()), app, games[index]);
+	//	//----///Question("Not implemented, press return to continue (");
+	//	// go to game detail page
+	//	GameMenu(Utils::toUpperA(games[index]->GetName()), app, games[index]);
 	//}
 
 	return false;
