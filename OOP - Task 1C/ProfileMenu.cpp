@@ -2,17 +2,6 @@
 
 
 
-ProfileMenu::ProfileMenu(const std::string& title, Application * app, User* account) : Menu(title, app), account(account), sortName(true)
-{
-	if (!(typeid(*account) == typeid(User))) {
-		for (int i = 0; i < dynamic_cast<Player*>(account)->getLibary().size(); i++) {
-			games.push_back(dynamic_cast<Player*>(account)->getLibary()[i]);
-		}
-	}
-	Paint();
-
-}
-
 bool dateSort(LibraryItem* a, LibraryItem* b) {
 	return (a->getCreated() < b->getCreated());
 }
@@ -20,6 +9,17 @@ bool dateSort(LibraryItem* a, LibraryItem* b) {
 bool nameSort(LibraryItem* a, LibraryItem* b) {
 	return (a->getGame()->GetName() < b->getGame()->GetName());
 }
+ProfileMenu::ProfileMenu(const std::string& title, Application * app, User* account) : Menu(title, app), account(account), sortName(true)
+{
+	if (!(typeid(*account) == typeid(User))) {
+		for (int i = 0; i < dynamic_cast<Player*>(account)->getLibary().size(); i++) {
+			games.push_back(dynamic_cast<Player*>(account)->getLibary()[i]);
+		}
+	}
+	std::sort(games.begin(), games.end(), nameSort);
+	Paint();
+}
+
 
 void ProfileMenu::OutputOptions()
 {
@@ -30,7 +30,6 @@ void ProfileMenu::OutputOptions()
 	Line();
 	Line("GAMES");
 	for (int i = 0; i < games.size(); i++) {
-
 		Option(i, games[i]->getGame()->GetName());
 	}
 	Line();

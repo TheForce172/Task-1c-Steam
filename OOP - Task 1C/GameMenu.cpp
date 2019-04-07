@@ -21,15 +21,16 @@ bool GameMenu::HandleChoice(char choice)
 	switch (choice)
 	{
 	case 'P':
-	{		
+	{
 		//check the credits at the same time
-		if (app->GetCurrentUser.getCredits >= game->GetCost)		
+		if (app->GetCurrentUser()->GetCredits() >= game->GetCost())
 		{
-		//add new library item to current user
+			//add new library item to current user
 			Date date;
-			dynamic_cast<Player*>(app->GetCurrentUser).addToLibrary(new LibraryItem(date, game));		
-		}                                                                                          
+			dynamic_cast<Player*>(app->GetCurrentUser())->addToLibrary(new LibraryItem(date, game));
+		}
 	} break;
+	}
 
 	return false;
 }
