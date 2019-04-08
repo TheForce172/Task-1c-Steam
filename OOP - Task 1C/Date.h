@@ -22,7 +22,7 @@ public:
 	bool operator==(const Date&) const; 
 	bool operator<(const Date&) const;
 	void operator=(const string);
-
+	long int sum() const;
 	ostream& putDataInStream(ostream&) const;	
 	istream& getDataFromStream(istream&);	
 private:

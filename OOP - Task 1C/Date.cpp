@@ -33,6 +33,9 @@ void Date::setCurrentDate() {
 	month_ = t.tm_mon + 1;
 	year_ = t.tm_year + 1900;
 }
+long int Date::sum() const {
+	return static_cast<long int>(month_ * 100 + day_ + year_* 10000);
+}
 
 bool Date::operator==(const Date& d) const { 
 	return
@@ -40,18 +43,9 @@ bool Date::operator==(const Date& d) const {
 		(month_ == d.month_) &&
 		(year_ == d.year_);
 }
-
 bool Date::operator<(const Date & rhs) const
 {
-	if (!(rhs.year_ < year_)) {
-		if (!(rhs.month_ < month_)) {
-			if (!(rhs.day_ < day_)) {
-				return false;
-			}
-		}
-			
-	}
-	return true;
+	return this->sum() < rhs.sum();
 }
 
 void Date::operator=(const string string)

@@ -27,7 +27,8 @@ bool dislikeMenu::HandleChoice(char choice)
 		if (index >= 0 && index < games.length())
 		{
 			dynamic_cast<Player*>(app->GetCurrentUser())->adddisLike(games[index]);
+			return true;
 
-			return false;
 		}
+		return false;
 }

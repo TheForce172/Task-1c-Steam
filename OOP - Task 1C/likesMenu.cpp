@@ -24,7 +24,7 @@ bool likeMenu::HandleChoice(char choice)
 	if (index >= 0 && index < games.length())
 	{
 		dynamic_cast<Player*>(app->GetCurrentUser())->addLike(games[index]);
-
-		return false;
+		return true;
 	}
+		return false;
 }

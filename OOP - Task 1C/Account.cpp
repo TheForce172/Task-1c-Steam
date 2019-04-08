@@ -22,6 +22,7 @@ void Account::addUser(User* u) {
 }
 
 void Account::removeUser(User* u) {
+
 	users.deleteOne(u);
 }
 
