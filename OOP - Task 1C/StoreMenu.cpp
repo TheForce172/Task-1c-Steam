@@ -30,7 +30,7 @@ void StoreMenu::OutputOptions()
 		}
 		int averagel;
 		if (total != 0) {
-			averagel = total / likes;
+			averagel = (total / likes) * 100;
 		}
 		else {
 			averagel = 0;

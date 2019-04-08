@@ -108,14 +108,14 @@ bool ProfileMenu::HandleChoice(char choice)
 						used = true;
 						}
 				}
-				if (used = false) {
+				if (used == false) {
 					for (int j = 0; j < dynamic_cast<Player*>(app->GetCurrentUser())->getdislikes().length(); j++) {
 						if (dynamic_cast<Player*>(app->GetCurrentUser())->getdislikes()[j] == games[i]->getGame()) {
 							used = true;
 						}
 					}
 				}
-				if (used = false) {
+				if (used == false) {
 					temp.addAtEnd(games[i]->getGame());
 				}
 			}
