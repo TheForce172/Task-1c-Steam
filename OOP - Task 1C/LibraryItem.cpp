@@ -20,7 +20,7 @@ Date LibraryItem::getCreated() {
 	return purchased;
 }
 
-int LibraryItem::getTime() const{
+double LibraryItem::getTime() const{
 	return playTime;
 }
 
