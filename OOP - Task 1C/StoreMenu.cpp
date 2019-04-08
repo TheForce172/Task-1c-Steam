@@ -13,6 +13,7 @@ void StoreMenu::OutputOptions()
 		{
 		int total = 0;
 		int likes = 0;
+		int dislikes = 0;
 		for (int j = 0; j < app->getAccounts().length(); j++) {
 			for (int k = 0; k < app->getAccounts()[j]->getUsers().length(); k++) {
 				for (int l = 0; l < dynamic_cast<Player*>(app->getAccounts()[j]->getUsers()[k])->getlikes().length(); l++) {
@@ -24,13 +25,16 @@ void StoreMenu::OutputOptions()
 				for (int l = 0; l < dynamic_cast<Player*>(app->getAccounts()[j]->getUsers()[k])->getdislikes().length(); l++) {
 					if (dynamic_cast<Player*>(app->getAccounts()[j]->getUsers()[k])->getdislikes()[l] == games[i]) {
 						total++;
+						dislikes++;
 					}
 				}
 			}
 		}
 		int averagel;
-		if (total != 0) {
+		if (likes != 0) {
 			averagel = (total / likes) * 100;
+		}else if(dislikes != 0) {
+			averagel = -((total / dislikes) * 100);
 		}
 		else {
 			averagel = 0;

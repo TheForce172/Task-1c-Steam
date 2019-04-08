@@ -120,7 +120,7 @@ bool ProfileMenu::HandleChoice(char choice)
 				}
 			}
 			dislikeMenu("DISLIKE GAME", app, temp);
-		}
+		}break;
 		case 'L': {
 			List<Game*> temp;
 			for (int i = 0; i < games.size(); i++) {
@@ -142,7 +142,7 @@ bool ProfileMenu::HandleChoice(char choice)
 				}
 			}
 			likeMenu("LIKE GAME", app, temp);
-		}
+		}break;
 	}
 	int index = choice - '1';
 	if (index >= 0 && index < games.size())
