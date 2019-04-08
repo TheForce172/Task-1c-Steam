@@ -48,5 +48,5 @@ bool SearchMenu::HandleChoice(char choice)
 		SearchResultsMenu("Results", app, return_List);
 		break;
 	}
+	}
 }
-

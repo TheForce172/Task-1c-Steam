@@ -14,4 +14,5 @@ void SearchResultsMenu::OutputOptions()
 
 bool SearchResultsMenu::HandleChoice(char choice)
 {
+	return false;
 }
