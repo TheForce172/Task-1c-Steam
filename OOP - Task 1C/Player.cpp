@@ -27,6 +27,16 @@ List<Game*> Player::getdislikes() const
 	return dislikes;
 }
 
+void Player::addLike(Game *g)
+{
+	likes.addAtEnd(g);
+}
+
+void Player::adddisLike(Game *g)
+{
+	dislikes.addAtEnd(g);
+}
+
 void Player::addToLibrary(LibraryItem* l) {
 	//library.addAtEnd(l);
 	library.push_back(l);
