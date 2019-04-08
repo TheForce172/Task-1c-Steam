@@ -23,7 +23,7 @@ ProfileMenu::ProfileMenu(const std::string& title, Application * app, User* acco
 
 void ProfileMenu::OutputOptions()
 {
-	Line("Credits:");
+	Line("Credits:" + to_string(app->GetCurrentUser()->GetCredits()));
 	Option('I', "Purches 1 Credit");
 	Option('O', "Purches 10 Credits");
 	Option('P', "Purches 100 Credits");
