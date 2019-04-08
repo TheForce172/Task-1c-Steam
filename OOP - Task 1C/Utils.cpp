@@ -45,7 +45,7 @@ int Utils::ramdonNum(){
 bool Utils::StartsWith(std::string fullText, std::string searchText)
 {
 	if (fullText.length() != searchText.length()) {
-
+	
 		if (fullText.length() != searchText.length()) {
 			int difference = fullText.length() - searchText.length();
 			for (int i = 0; difference; i++);

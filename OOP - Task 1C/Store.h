@@ -11,6 +11,9 @@ class Store
 		~Store();
 		List<Game*> getGames() const;
 		void addGame(Game*);
+		const List<Game*> SearchName(std::string&) const;
+		const List<Game*> SearchPrice(std::string&) const;
+		void SearchageRating();
 	private:
 		List<Game*> games; 
 };

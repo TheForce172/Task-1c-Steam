@@ -20,13 +20,12 @@ void GameMenu::OutputOptions()
 		Option('P', "Purchase for " + std::to_string(game->GetCost() / 100.0f));
 	}
 	else {
-		Line("GAME IS OWNED");
+		Line("You Already Own This Game!!");
 	}
 }
 
 bool GameMenu::HandleChoice(char choice)
 {
-	//TOM HERE YOU NEED TO IMLEMENT THE Purchase OPTIO
 	switch (choice)
 	{
 	case 'P':

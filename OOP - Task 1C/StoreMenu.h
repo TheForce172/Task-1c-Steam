@@ -16,8 +16,8 @@ public:
 	StoreMenu(const std::string& title, Application * app);
 	void OutputOptions() final;
 	bool HandleChoice(char choice) final;
-	bool isSearching();
+	
 private:
 	List<Game*> games;
-	bool Searching;
+	
 };

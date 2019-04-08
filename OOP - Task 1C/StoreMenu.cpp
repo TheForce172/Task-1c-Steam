@@ -9,20 +9,16 @@ StoreMenu::StoreMenu(const std::string& title, Application * app) : Menu(title, 
 
 void StoreMenu::OutputOptions()
 {
-	if (isSearching() == true) {
-
-	}
-	else {
-		for (int i = 0; i < games.length(); i++)
+	for (int i = 0; i < games.length(); i++)
 		{
 			// adding 1 so the display is nicer for the user
 			Option(i + 1, games[i]->GetName());
 		}
 
 		Option('S', "Search");
-	}
-
 }
+
+
 
 
 bool StoreMenu::HandleChoice(char choice)
@@ -44,7 +40,3 @@ bool StoreMenu::HandleChoice(char choice)
 
 }
 
-bool StoreMenu::isSearching()
-{
-	return false;
-}
