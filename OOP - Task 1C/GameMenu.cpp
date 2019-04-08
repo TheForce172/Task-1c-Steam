@@ -4,6 +4,11 @@
 
 GameMenu::GameMenu(const std::string& title, Application * app, Game * game): game(game), Menu(title, app)
 {
+	Paint();
+}
+
+void GameMenu::OutputOptions()
+{
 	if (app->IsUserLoggedIn()) {
 		for (int i = 0; i < dynamic_cast<Player*>(app->GetCurrentUser())->getLibary().size(); i++) {
 			if (dynamic_cast<Player*>(app->GetCurrentUser())->getLibary()[i]->getGame() == game) {
@@ -11,11 +16,6 @@ GameMenu::GameMenu(const std::string& title, Application * app, Game * game): ga
 			}
 		}
 	}
-	Paint();
-}
-
-void GameMenu::OutputOptions()
-{
 	Line(game->GetDescription());
 	if (app->IsUserLoggedIn() && owned == false) {
 		
