@@ -11,8 +11,32 @@ void StoreMenu::OutputOptions()
 {
 	for (int i = 0; i < games.length(); i++)
 		{
+		int total = 0;
+		int likes = 0;
+		for (int j = 0; j < app->getAccounts().length(); j++) {
+			for (int k = 0; k < app->getAccounts()[j]->getUsers().length(); k++) {
+				for (int l = 0; k < dynamic_cast<Player*>(app->getAccounts()[j]->getUsers()[k])->getlikes().length(); l++) {
+					if (dynamic_cast<Player*>(app->getAccounts()[j]->getUsers()[k])->getlikes()[l] == games[i]) {
+						total++;
+						likes++;
+					}
+				}
+				for (int l = 0; k < dynamic_cast<Player*>(app->getAccounts()[j]->getUsers()[k])->getdislikes().length(); l++) {
+					if (dynamic_cast<Player*>(app->getAccounts()[j]->getUsers()[k])->getdislikes()[l] == games[i]) {
+						total++;
+					}
+				}
+			}
+		}
+		int averagel;
+		if (total != 0) {
+			averagel = total / likes;
+		}
+		else {
+			averagel = 0;
+		}
 			// adding 1 so the display is nicer for the user
-			Option(i + 1, games[i]->GetName());
+			Option(i + 1, games[i]->GetName() + " - " + to_string(averagel) + "%");
 		}
 
 		Option('S', "Search");

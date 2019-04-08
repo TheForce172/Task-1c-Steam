@@ -17,6 +17,16 @@ std::vector<LibraryItem*> Player::getLibary() const
 	return library;
 }
 
+List<Game*> Player::getlikes() const
+{
+	return likes;
+}
+
+List<Game*> Player::getdislikes() const
+{
+	return dislikes;
+}
+
 void Player::addToLibrary(LibraryItem* l) {
 	//library.addAtEnd(l);
 	library.push_back(l);

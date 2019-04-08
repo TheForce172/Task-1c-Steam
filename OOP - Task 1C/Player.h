@@ -12,7 +12,11 @@ class Player : public User
 		Player(const std::string&, const std::string&, const Date &, const int&);
 		~Player();
 		std::vector<LibraryItem*> getLibary() const;
+		List<Game*> getlikes() const;
+		List<Game*> getdislikes() const;
 		void addToLibrary(LibraryItem*);
 	private:
 		std::vector<LibraryItem*> library;
+		List<Game*> likes;
+		List<Game*> dislikes;
 };
