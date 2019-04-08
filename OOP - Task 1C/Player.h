@@ -14,6 +14,8 @@ class Player : public User
 		std::vector<LibraryItem*> getLibary() const;
 		List<Game*> getlikes() const;
 		List<Game*> getdislikes() const;
+		void addLike(Game *g);
+		void adddisLike(Game *g);
 		void addToLibrary(LibraryItem*);
 	private:
 		std::vector<LibraryItem*> library;
