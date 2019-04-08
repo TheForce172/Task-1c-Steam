@@ -29,5 +29,5 @@ const Date& User::getCreated() const {
 
 void User::AddCredits(double c)
 {
-	credits =+ c;
+	credits = credits + c;
 }

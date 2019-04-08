@@ -47,3 +47,12 @@ bool Utils::StartsWith(std::string fullText, std::string searchText)
 	return toUpperA(searchText) == toUpperA(fullText.substr(0, searchText.length()));
 }
 
+std::string Utils::decimalLength(double num, int places)
+{
+	std::ostringstream out;
+	out << std::setprecision(places) << num;
+	std::string o;
+	o = out.str();
+	return o;
+}
+

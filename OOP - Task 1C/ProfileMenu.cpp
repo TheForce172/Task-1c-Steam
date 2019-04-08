@@ -23,10 +23,10 @@ ProfileMenu::ProfileMenu(const std::string& title, Application * app, User* acco
 
 void ProfileMenu::OutputOptions()
 {
-	Line("Credits:" + to_string(app->GetCurrentUser()->GetCredits()));
-	Option('I', "Purches 1 Credit");
-	Option('O', "Purches 10 Credits");
-	Option('P', "Purches 100 Credits");
+	Line("Credits:" + Utils::decimalLength(app->GetCurrentUser()->GetCredits(),6));
+	Option('I', "Purchase 1 Credit");
+	Option('O', "Purchase 10 Credits");
+	Option('P', "Purchase 100 Credits");
 	Line();
 	Line("GAMES");
 	for (int i = 0; i < games.size(); i++) {
@@ -35,16 +35,16 @@ void ProfileMenu::OutputOptions()
 		string played;
 		if (games[i]->getTime() < 60) {
 			time = games[i]->getTime() / 1.0f;
-			played = to_string(time) + "Mins";
+			played = Utils::decimalLength(time, 0) + "Mins";
 		}
 		else if (games[i]->getTime() > 60 && games[i]->getTime() < 300) {
 			time = (games[i]->getTime() / 60) /1.0f;
-			played = to_string(time) + "Hrs";
+			played = Utils::decimalLength(time, 2) + "Hrs";
 		}
-		else {
+		else if (games[i]->getTime() > 300){
 			time = (games[i]->getTime() / 60) / 1.0f;
 			round(time);
-			played = to_string(time) + "Hrs";
+			played = Utils::decimalLength(time, 1) + "Hrs";
 		}
 		Option(i + 1, games[i]->getGame()->GetName() + " (" + played + ") ");
 	}

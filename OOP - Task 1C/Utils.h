@@ -3,6 +3,8 @@
 #include <string>
 #include <iostream>
 #include <cctype>
+#include <iomanip>
+#include <sstream>
 
 class Utils
 {
@@ -13,6 +15,6 @@ class Utils
 	static std::string toUpperB(std::string); // recurrsive way 
 	static int ramdonNum();
 	static bool StartsWith(std::string fullText, std::string searchText);
-
+	static std::string decimalLength(double num, int places);
 };
 

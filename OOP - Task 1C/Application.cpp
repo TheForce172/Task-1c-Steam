@@ -141,12 +141,13 @@ void Application::Load() {
 				getline(Load, time);
 				Date date2;
 				date2 = date;
-				currentUser->addToLibrary(new LibraryItem(date2, store.getGames()[stoi(gameID)], stoi(time)));
+				currentUser->addToLibrary(new LibraryItem(date2, store.getGames()[stoi(gameID)], stod(time)));
 
 			}
 		}
 
 	}
+	Load.close();
 }
 void Application::Save() {
 
