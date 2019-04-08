@@ -145,7 +145,7 @@ bool ProfileMenu::HandleChoice(char choice)
 					temp.addAtEnd(games[i]->getGame());
 				}
 			}
-			likeMenu("DISLIKE GAME", app, temp);
+			likeMenu("LIKE GAME", app, temp);
 		}
 	}
 	int index = choice - '1';
