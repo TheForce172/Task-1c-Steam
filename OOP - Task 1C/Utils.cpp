@@ -41,3 +41,34 @@ int Utils::ramdonNum(){
 		return randNum;
 
 }
+
+bool Utils::StartsWith(std::string fullText, std::string searchText)
+{
+	if (fullText.length() != searchText.length()) {
+
+		if (fullText.length() != searchText.length()) {
+			int difference = fullText.length() - searchText.length();
+			for (int i = 0; difference; i++);
+			{
+				fullText.pop_back();
+			}
+
+			if (toUpperB(fullText).find(toUpperB(searchText)) == 0)
+				return true;
+			else
+				return false;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	else {
+		if (toUpperB(fullText).find(toUpperB(searchText)) == 0)
+			return true;
+		else
+			return false;
+	}
+}
+

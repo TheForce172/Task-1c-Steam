@@ -12,6 +12,7 @@ class Utils
 	static std::string toUpperA(std::string); // for loop
 	static std::string toUpperB(std::string); // recurrsive way 
 	static int ramdonNum();
+	bool StartsWith(std::string fullText, std::string searchText);
 
 };
 

@@ -11,10 +11,6 @@ class Store
 		~Store();
 		List<Game*> getGames() const;
 		void addGame(Game*);
-		void showSearchForName() const;
-		void showSearchForageRating() const;
-		void showSearchForCost() const;
-
 	private:
 		List<Game*> games; 
 };

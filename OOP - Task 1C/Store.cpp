@@ -18,13 +18,8 @@ void Store::addGame(Game* g) {
 	games.addAtEnd(g);
 }
 
-void Store::showSearchForName() const {
 
 
-}
-void Store::showSearchForageRating() const {
 
-}
-void Store::showSearchForCost() const {
 
-}
+
