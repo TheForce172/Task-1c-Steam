@@ -4,9 +4,11 @@
 
 GameMenu::GameMenu(const std::string& title, Application * app, Game * game): game(game), Menu(title, app)
 {
-	for (int i = 0; i < dynamic_cast<Player*>(app->GetCurrentUser())->getLibary().size(); i++) {
-		if (dynamic_cast<Player*>(app->GetCurrentUser())->getLibary()[i]->getGame() == game) {
-			owned = true;
+	if (app->IsUserLoggedIn()) {
+		for (int i = 0; i < dynamic_cast<Player*>(app->GetCurrentUser())->getLibary().size(); i++) {
+			if (dynamic_cast<Player*>(app->GetCurrentUser())->getLibary()[i]->getGame() == game) {
+				owned = true;
+			}
 		}
 	}
 	Paint();
