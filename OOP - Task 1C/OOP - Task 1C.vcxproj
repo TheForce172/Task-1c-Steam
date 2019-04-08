@@ -155,9 +155,11 @@
     <ClCompile Include="Admin.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Date.cpp" />
+    <ClCompile Include="dislikeMenu.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameMenu.cpp" />
     <ClCompile Include="LibraryItem.cpp" />
+    <ClCompile Include="likesMenu.cpp" />
     <ClCompile Include="LoginAccountMenu.cpp" />
     <ClCompile Include="LoginUserMenu.cpp" />
     <ClCompile Include="MainMenu.cpp" />
@@ -178,9 +180,11 @@
     <ClInclude Include="Admin.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="Date.h" />
+    <ClInclude Include="dislikeMenu.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameMenu.h" />
     <ClInclude Include="LibraryItem.h" />
+    <ClInclude Include="likesMenu.h" />
     <ClInclude Include="ListT.h" />
     <ClInclude Include="LoginAccountMenu.h" />
     <ClInclude Include="LoginUserMenu.h" />
