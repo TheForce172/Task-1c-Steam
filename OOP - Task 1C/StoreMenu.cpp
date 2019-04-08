@@ -31,10 +31,10 @@ void StoreMenu::OutputOptions()
 			}
 		}
 		int averagel;
-		if (likes != 0) {
-			averagel = (total / likes) * 100;
-		}else if(dislikes != 0) {
-			averagel = -((total / dislikes) * 100);
+		if (likes != 0 && total != 0) {
+			averagel = (likes / total) * 100;
+		}else if(dislikes != 0 && total != 0) {
+			averagel = -((dislikes/ total) * 100);
 		}
 		else {
 			averagel = 0;
