@@ -24,10 +24,11 @@ void dislikeMenu::OutputOptions()
 
 bool dislikeMenu::HandleChoice(char choice)
 {
-	int index = choice - '1';
-	if (index >= 0 && index < games.length())
-	{
-		app->GetCurrentUser()
-	}
-	return false;
+		int index = choice - '1';
+		if (index >= 0 && index < games.length())
+		{
+			dynamic_cast<Player*>(app->GetCurrentUser())->adddisLike(games[index]);
+
+			return false;
+		}
 }
