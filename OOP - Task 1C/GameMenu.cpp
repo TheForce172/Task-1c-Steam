@@ -26,7 +26,6 @@ void GameMenu::OutputOptions()
 
 bool GameMenu::HandleChoice(char choice)
 {
-	//TOM HERE YOU NEED TO IMLEMENT THE Purchase OPTIO
 	switch (choice)
 	{
 	case 'P':
