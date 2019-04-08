@@ -11,9 +11,9 @@ void StoreMenu::OutputOptions()
 {
 	for (int i = 0; i < games.length(); i++)
 		{
-		int total = 0;
-		int likes = 0;
-		int dislikes = 0;
+		double total = 0;
+		double likes = 0;
+		double dislikes = 0;
 		for (int j = 0; j < app->getAccounts().length(); j++) {
 			for (int k = 0; k < app->getAccounts()[j]->getUsers().length(); k++) {
 				for (int l = 0; l < dynamic_cast<Player*>(app->getAccounts()[j]->getUsers()[k])->getlikes().length(); l++) {
