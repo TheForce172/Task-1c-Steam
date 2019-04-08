@@ -7,7 +7,7 @@
 
 
 
-dislikeMenu::dislikeMenu(const std::string & title, Application * app):Menu(title,app)
+dislikeMenu::dislikeMenu(const std::string & title, Application * app, List<Game*> games):Menu(title,app), games(games)
 {
 	Paint();
 }
@@ -15,7 +15,7 @@ dislikeMenu::dislikeMenu(const std::string & title, Application * app):Menu(titl
 void dislikeMenu::OutputOptions()
 {
 	for (int i = 0; i < games.length(); i++) {
-		double time;
+		bool liked;
 
 		Option(i + 1, games[i]->GetName());
 	}

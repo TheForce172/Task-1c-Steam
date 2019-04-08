@@ -55,6 +55,8 @@ void ProfileMenu::OutputOptions()
 	else {
 		Option('S', "Sort by name");
 	}
+	Option('L', "Like a game");
+	Option('D', "Dislike a game");
 	Line();
 	if (typeid(*account) == typeid(Admin)) {
 
@@ -97,6 +99,54 @@ bool ProfileMenu::HandleChoice(char choice)
 		case 'P': {
 			app->GetCurrentUser()->AddCredits(100);
 		}break;
+		case 'D': {
+			List<Game*> temp;
+			for (int i = 0; i < games.size(); i++) {
+				bool used = false;
+				for (int j = 0; j < dynamic_cast<Player*>(app->GetCurrentUser())->getlikes().length; i++) {
+					if (dynamic_cast<Player*>(app->GetCurrentUser())->getlikes()[j] == games[i]->getGame()){
+						used = true;
+						break;
+						}
+				}
+				if (used = false) {
+					for (int j = 0; j < dynamic_cast<Player*>(app->GetCurrentUser())->getdislikes().length; i++) {
+						if (dynamic_cast<Player*>(app->GetCurrentUser())->getdislikes()[j] == games[i]->getGame()) {
+							used = true;
+							break;
+						}
+					}
+				}
+				if (used = false) {
+					temp.addAtEnd(games[i]->getGame());
+				}
+			}
+			dislikeMenu("DISLIKE GAME", app, temp);
+		}
+		case 'L': {
+			List<Game*> temp;
+			for (int i = 0; i < games.size(); i++) {
+				bool used = false;
+				for (int j = 0; j < dynamic_cast<Player*>(app->GetCurrentUser())->getlikes().length; i++) {
+					if (dynamic_cast<Player*>(app->GetCurrentUser())->getlikes()[j] == games[i]->getGame()) {
+						used = true;
+						break;
+					}
+				}
+				if (used = false) {
+					for (int j = 0; j < dynamic_cast<Player*>(app->GetCurrentUser())->getdislikes().length; i++) {
+						if (dynamic_cast<Player*>(app->GetCurrentUser())->getdislikes()[j] == games[i]->getGame()) {
+							used = true;
+							break;
+						}
+					}
+				}
+				if (used = false) {
+					temp.addAtEnd(games[i]->getGame());
+				}
+			}
+			likeMenu("DISLIKE GAME", app, temp);
+		}
 	}
 	int index = choice - '1';
 	if (index >= 0 && index < games.size())

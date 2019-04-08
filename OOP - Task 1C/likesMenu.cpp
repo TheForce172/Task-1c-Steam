@@ -3,7 +3,7 @@
 
 
 
-likeMenu::likeMenu(const std::string & title, Application * app):Menu(title, app)
+likeMenu::likeMenu(const std::string & title, Application * app, List<Game*> games) :Menu(title, app), games(games)
 {
 	Paint();
 }

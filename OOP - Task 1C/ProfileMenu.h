@@ -3,6 +3,8 @@
 #include <vector>
 #include <algorithm>
 #include "RemoveUserMenu.h"
+#include "dislikeMenu.h"
+#include "likesMenu.h"
 
 class ProfileMenu :
 	public Menu
