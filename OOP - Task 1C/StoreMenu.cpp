@@ -40,7 +40,7 @@ void StoreMenu::OutputOptions()
 			averagel = 0;
 		}
 			// adding 1 so the display is nicer for the user
-			Option(i + 1, games[i]->GetName() + " - " + Utils::decimalLength(averagel, 2) + "%");
+			Option(i + 1, games[i]->GetName() + " - " + Utils::decimalLength(averagel, 6) + "%");
 		}
 
 		Option('S', "Search");
