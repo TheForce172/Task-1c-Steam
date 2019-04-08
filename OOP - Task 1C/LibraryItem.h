@@ -11,10 +11,10 @@ class LibraryItem
 		~LibraryItem();
 		Game *getGame();
 		Date getCreated();
-		int getTime() const;
+		double getTime() const;
 		void addTime();
 	private:
 		Game* game;
 		const Date purchased;  // TODO: replace with custom Date class, currently YYYY-MM-DD
-		int playTime;
+		double playTime;
 };
