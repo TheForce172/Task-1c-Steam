@@ -106,14 +106,12 @@ bool ProfileMenu::HandleChoice(char choice)
 				for (int j = 0; j < dynamic_cast<Player*>(app->GetCurrentUser())->getlikes().length(); j++) {
 					if (dynamic_cast<Player*>(app->GetCurrentUser())->getlikes()[j] == games[i]->getGame()){
 						used = true;
-						break;
 						}
 				}
 				if (used = false) {
 					for (int j = 0; j < dynamic_cast<Player*>(app->GetCurrentUser())->getdislikes().length(); j++) {
 						if (dynamic_cast<Player*>(app->GetCurrentUser())->getdislikes()[j] == games[i]->getGame()) {
 							used = true;
-							break;
 						}
 					}
 				}
