@@ -24,49 +24,38 @@ bool SearchMenu::HandleChoice(char choice)
 	case 'N':
 	{
 		string ans = Question("Enter name to search for");
-		for (int count = 0; count < app->GetStore().getGames().length(); count++)
-		{
-			if (app->GetStore()->SearchName(tempSearch.first()->GetName(), ans))
-			{
-				return_List.addAtEnd(tempSearch.first());
-			}
-			tempSearch.deleteFirst();
-		}
+		return_List = app->GetStore().SearchName(ans);
 		SearchResultsMenu("Results", app, return_List);
 		break;
 	}
 
-	case'C':
+	case'P':
 	{
-		string ans = Question("Enter a price range to search for (e.g 1-10)");
-		for (int count = 0; count < app->GetStore().getGames().length(); count++)
-		{
-			if (app->GetStore()->SearchPrice(tempSearch.first()->GetCost(), ans))
-			{
-				return_List.addAtEnd(tempSearch.first());
-			}
-			tempSearch.deleteFirst();
-		}
+		string ans = Question("Enter a price range to search for (e.g 5-10)");
+		std::istringstream ss(ans);
+		int to, from;
+		char a;
+		ss >> from >> a >> to;
+		return_List = app->GetStore().SearchPrice(to, from);
 		SearchResultsMenu("Results", app, return_List);
 		break;
 	}
 
-	case 'A':
+	case'R':
 	{
-		string ans = Question("Enter a age range to search for");
-		for (int count = 0; count < app->GetStore().getGames().length(); count++)
-		{
-			if (app->GetStore()->SearchName(tempSearch.first()->GetName(), ans))
-			{
-				return_List.addAtEnd(tempSearch.first());
-			}
-			tempSearch.deleteFirst();
-		}
+		string ans = Question("Search by age rating");
+		std::istringstream ss(ans);
+		int to, from;
+		char a;
+		ss >> to >> a >> from;
+		return_List = app->GetStore().SearchageRating(to, from);
 		SearchResultsMenu("Results", app, return_List);
 		break;
 	}
+
+
 	}
 
-		
+	return false;
 }
 

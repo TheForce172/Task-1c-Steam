@@ -1,7 +1,7 @@
 #include "SearchResultsMenu.h"
 
 
-SearchResultsMenu::SearchResultsMenu(const std::string& title, Application * app, List<Game*> games) : Menu(title, app)
+SearchResultsMenu::SearchResultsMenu(const std::string& title, Application * app, List<Game*> games) : Menu(title, app), games(games)
 {
 	Paint();
 }
@@ -14,5 +14,12 @@ void SearchResultsMenu::OutputOptions()
 
 bool SearchResultsMenu::HandleChoice(char choice)
 {
+	int index = choice - '1';
+	if (index >= 0 && index < games.length())
+	{
+		//Question("Not implemented, press return to continue (");
+		// go to game detail page
+		GameMenu(Utils::toUpperB(games[index]->GetName()), app, games[index]);
+	}
 	return false;
 }

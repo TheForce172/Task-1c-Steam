@@ -28,21 +28,20 @@ const List<Game*> Store::SearchName(std::string& s) const{
 
 }
 
-const List<Game*> Store::SearchPrice(std::string& s) const{
+const List<Game*> Store::SearchPrice(int to, int from) const{
 	List<Game*> searchList;
-
 	for (int i = 0; i < games.length(); i++)
-		if (Utils::StartsWith(games[i]->GetCost(), s))
+		if (to > (double)(games[i]->GetCost())/100 && from < (double)(games[i]->GetCost())/100)
 			searchList.addAtEnd(games[i]);
 	return searchList;
 
+
 }
 
-const List<Game*> Store::SearchageRating(std::string& s) {
+const List<Game*> Store::SearchageRating(int to, int from) const {
 	List<Game*> searchList;
-
 	for (int i = 0; i < games.length(); i++)
-		if (Utils::StartsWith(games[i]->GetageRating(), s))
+		if (to > games[i]->GetageRating() && from < games[i]->GetCost())
 			searchList.addAtEnd(games[i]);
 	return searchList;
 
