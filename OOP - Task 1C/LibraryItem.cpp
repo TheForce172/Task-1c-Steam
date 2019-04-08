@@ -5,7 +5,7 @@ LibraryItem::LibraryItem(const Date& date, Game* game) : purchased(date), game(g
 	playTime = 0;
 }
 
-LibraryItem::LibraryItem(const Date& date, Game* game, int playTime) : purchased(date), game(game), playTime(playTime)
+LibraryItem::LibraryItem(const Date& date, Game* game, double playTime) : purchased(date), game(game), playTime(playTime)
 {
 }
 

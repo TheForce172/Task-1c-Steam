@@ -7,7 +7,7 @@ class LibraryItem
 {
 	public:
 		LibraryItem(const Date&, Game*);
-		LibraryItem(const Date&, Game*, int);
+		LibraryItem(const Date&, Game*, double);
 		~LibraryItem();
 		Game *getGame();
 		Date getCreated();
