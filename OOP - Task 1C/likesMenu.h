@@ -7,7 +7,7 @@ class likeMenu : public Menu
 {
 public:
 
-	likeMenu(const std::string& title, Application * app);
+	likeMenu(const std::string & title, Application * app, List<Game*> games);
 	void OutputOptions() final;
 	bool HandleChoice(char choice) final;
 

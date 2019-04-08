@@ -11,7 +11,6 @@ likeMenu::likeMenu(const std::string & title, Application * app, List<Game*> gam
 void likeMenu::OutputOptions()
 {
 	for (int i = 0; i < games.length(); i++) {
-		double time;
 
 		Option(i + 1, games[i]->GetName());
 
@@ -26,5 +25,6 @@ bool likeMenu::HandleChoice(char choice)
 	{
 		dynamic_cast<Player*>(app->GetCurrentUser())->addLike(games[index]);
 
-	return false;
+		return false;
+	}
 }

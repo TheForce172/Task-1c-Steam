@@ -15,7 +15,6 @@ dislikeMenu::dislikeMenu(const std::string & title, Application * app, List<Game
 void dislikeMenu::OutputOptions()
 {
 	for (int i = 0; i < games.length(); i++) {
-		bool liked;
 
 		Option(i + 1, games[i]->GetName());
 	}

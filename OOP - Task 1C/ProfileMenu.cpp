@@ -103,14 +103,14 @@ bool ProfileMenu::HandleChoice(char choice)
 			List<Game*> temp;
 			for (int i = 0; i < games.size(); i++) {
 				bool used = false;
-				for (int j = 0; j < dynamic_cast<Player*>(app->GetCurrentUser())->getlikes().length; i++) {
+				for (int j = 0; j < dynamic_cast<Player*>(app->GetCurrentUser())->getlikes().length(); i++) {
 					if (dynamic_cast<Player*>(app->GetCurrentUser())->getlikes()[j] == games[i]->getGame()){
 						used = true;
 						break;
 						}
 				}
 				if (used = false) {
-					for (int j = 0; j < dynamic_cast<Player*>(app->GetCurrentUser())->getdislikes().length; i++) {
+					for (int j = 0; j < dynamic_cast<Player*>(app->GetCurrentUser())->getdislikes().length(); i++) {
 						if (dynamic_cast<Player*>(app->GetCurrentUser())->getdislikes()[j] == games[i]->getGame()) {
 							used = true;
 							break;
@@ -127,14 +127,14 @@ bool ProfileMenu::HandleChoice(char choice)
 			List<Game*> temp;
 			for (int i = 0; i < games.size(); i++) {
 				bool used = false;
-				for (int j = 0; j < dynamic_cast<Player*>(app->GetCurrentUser())->getlikes().length; i++) {
+				for (int j = 0; j < dynamic_cast<Player*>(app->GetCurrentUser())->getlikes().length(); i++) {
 					if (dynamic_cast<Player*>(app->GetCurrentUser())->getlikes()[j] == games[i]->getGame()) {
 						used = true;
 						break;
 					}
 				}
 				if (used = false) {
-					for (int j = 0; j < dynamic_cast<Player*>(app->GetCurrentUser())->getdislikes().length; i++) {
+					for (int j = 0; j < dynamic_cast<Player*>(app->GetCurrentUser())->getdislikes().length(); i++) {
 						if (dynamic_cast<Player*>(app->GetCurrentUser())->getdislikes()[j] == games[i]->getGame()) {
 							used = true;
 							break;
