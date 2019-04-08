@@ -30,7 +30,7 @@ void StoreMenu::OutputOptions()
 				}
 			}
 		}
-		int averagel;
+		double averagel;
 		if (likes != 0 && total != 0) {
 			averagel = (likes / total) * 100;
 		}else if(dislikes != 0 && total != 0) {
@@ -40,7 +40,7 @@ void StoreMenu::OutputOptions()
 			averagel = 0;
 		}
 			// adding 1 so the display is nicer for the user
-			Option(i + 1, games[i]->GetName() + " - " + to_string(averagel) + "%");
+			Option(i + 1, games[i]->GetName() + " - " + Utils::decimalLength(averagel, 2) + "%");
 		}
 
 		Option('S', "Search");
